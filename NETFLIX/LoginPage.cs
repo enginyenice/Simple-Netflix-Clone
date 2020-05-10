@@ -38,7 +38,7 @@ namespace NETFLIX
         {
             if (Account.LoginControl(Email.Text, Password.Text) == true)
             {
-                HomePage homePage = new HomePage();
+                HomePage homePage = new HomePage(Account.UserMail,Account.UserID);
                 this.Hide();
                 homePage.Show();
                 //MessageBox.Show("Panele giriş yapılıyor.","Dogru Giriş",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);

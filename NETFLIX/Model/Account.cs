@@ -10,14 +10,22 @@ namespace NETFLIX.Model
 {
     class Account
     {
-        public bool LoginControl(String Email, String Password)
+        public string UserMail { get; set; }
+        public int UserID { get; set; }
+
+        public bool LoginControl(String email, String password)
         {
             // SQL Sorgular sonuc true ise dogru
             bool result = true;
+            if(result == true)
+            {
+                this.UserMail = email;
+                this.UserID = 1;
+            }
 
             return result;
         }
-        public int CreateAccount(String Email, String Password, String Date)
+        public int CreateAccount(String email, String password, String date)
         {
             /*
              * Donus:
@@ -43,13 +51,13 @@ namespace NETFLIX.Model
             fs.Close();
             return text;
         }
-        public void RememberMeCreate(String Email, String Password)
+        public void RememberMeCreate(String email, String password)
         {
             string baslangicYolu = Application.StartupPath;
             string dosya_yolu = baslangicYolu + "//NETFLIXACCOUNT.nfx";
             FileStream fs = new FileStream(dosya_yolu, FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(Email+"|"+Password);
+            sw.WriteLine(email + "|"+ password);
             sw.Close();
             fs.Close();
         }

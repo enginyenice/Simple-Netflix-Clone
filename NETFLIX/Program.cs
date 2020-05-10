@@ -16,7 +16,7 @@ namespace NETFLIX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginPage());
+            Application.Run(new HomePage("email",1234));
         }
     }
 }
