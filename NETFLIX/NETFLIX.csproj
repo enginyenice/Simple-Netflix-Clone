@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Model\DBConnection.cs" />
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterPage.cs">

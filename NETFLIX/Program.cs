@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NETFLIX.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace NETFLIX
 {
     static class Program
     {
+        public static User user = new User();
         /// <summary>
         /// Uygulamanın ana girdi noktası.
         /// </summary>
@@ -16,7 +18,9 @@ namespace NETFLIX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePage("email",1234));
+            Application.Run(new LoginPage());
+            
+
         }
     }
 }

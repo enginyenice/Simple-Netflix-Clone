@@ -16,6 +16,7 @@ namespace NETFLIX
         public LoginPage()
         {
             InitializeComponent();
+            
             String AccountData = Account.RememberMe();
            
             if(AccountData  != null)
@@ -36,12 +37,12 @@ namespace NETFLIX
 
         private void GirisBtn_Click(object sender, EventArgs e)
         {
+            
             if (Account.LoginControl(Email.Text, Password.Text) == true)
             {
-                HomePage homePage = new HomePage(Account.UserMail,Account.UserID);
+                HomePage homePage = new HomePage();
                 this.Hide();
                 homePage.Show();
-                //MessageBox.Show("Panele giriş yapılıyor.","Dogru Giriş",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -71,6 +72,11 @@ namespace NETFLIX
         private void CloseApplication_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

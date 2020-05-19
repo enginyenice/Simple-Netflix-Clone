@@ -10,22 +10,17 @@ namespace NETFLIX.Model
 {
     class Account
     {
-        public string UserMail { get; set; }
-        public int UserID { get; set; }
+        readonly DBConnection dB = new DBConnection();
+        User user = new User();
+
+        internal User User { get => user; set => user = value; }
 
         public bool LoginControl(String email, String password)
         {
-            // SQL Sorgular sonuc true ise dogru
-            bool result = true;
-            if(result == true)
-            {
-                this.UserMail = email;
-                this.UserID = 1;
-            }
-
-            return result;
+        bool result = dB.AccountCount(email, password);
+        return result;
         }
-        public int CreateAccount(String email, String password, String date)
+        public int CreateAccount(String name, String email, String password, DateTime date)
         {
             /*
              * Donus:
@@ -33,7 +28,13 @@ namespace NETFLIX.Model
              *        2 - Hesap Kayıt Edilemedi.
              *        3 - Böyle Bir Eposta Sisteme Kayıtlı
              */
-            int result = 3;
+
+            User newUser = new User();
+            newUser.KullaniciAdi = name;
+            newUser.KullaniciEmail = email;
+            newUser.KullaniciParola = password;
+            newUser.KullaniciDogumTarihi = date;
+            int result = dB.CreateAccount(newUser);
 
 
 

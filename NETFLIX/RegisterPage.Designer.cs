@@ -38,6 +38,8 @@
             this.BackBtn = new System.Windows.Forms.Button();
             this.Date = new System.Windows.Forms.DateTimePicker();
             this.CloseApplication = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Username = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -56,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.label2.Location = new System.Drawing.Point(99, 104);
+            this.label2.Location = new System.Drawing.Point(18, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 16);
             this.label2.TabIndex = 10;
@@ -67,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.label1.Location = new System.Drawing.Point(91, 57);
+            this.label1.Location = new System.Drawing.Point(18, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 9;
@@ -79,7 +81,7 @@
             this.Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic);
             this.Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.Password.Location = new System.Drawing.Point(15, 123);
+            this.Password.Location = new System.Drawing.Point(18, 164);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(194, 22);
             this.Password.TabIndex = 8;
@@ -91,7 +93,7 @@
             this.Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic);
             this.Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.Email.Location = new System.Drawing.Point(15, 76);
+            this.Email.Location = new System.Drawing.Point(18, 120);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(194, 22);
             this.Email.TabIndex = 7;
@@ -102,7 +104,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.label4.Location = new System.Drawing.Point(74, 150);
+            this.label4.Location = new System.Drawing.Point(18, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 16);
             this.label4.TabIndex = 13;
@@ -116,7 +118,7 @@
             this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.RegisterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.RegisterBtn.Location = new System.Drawing.Point(112, 201);
+            this.RegisterBtn.Location = new System.Drawing.Point(115, 236);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(97, 37);
             this.RegisterBtn.TabIndex = 14;
@@ -132,7 +134,7 @@
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.BackBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.BackBtn.Location = new System.Drawing.Point(15, 201);
+            this.BackBtn.Location = new System.Drawing.Point(18, 236);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(91, 37);
             this.BackBtn.TabIndex = 15;
@@ -149,7 +151,7 @@
             this.Date.Cursor = System.Windows.Forms.Cursors.Default;
             this.Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Date.Location = new System.Drawing.Point(15, 170);
+            this.Date.Location = new System.Drawing.Point(18, 208);
             this.Date.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.Date.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.Date.Name = "Date";
@@ -164,7 +166,7 @@
             this.CloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.CloseApplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
-            this.CloseApplication.Location = new System.Drawing.Point(15, 247);
+            this.CloseApplication.Location = new System.Drawing.Point(18, 279);
             this.CloseApplication.Name = "CloseApplication";
             this.CloseApplication.Size = new System.Drawing.Size(194, 37);
             this.CloseApplication.TabIndex = 20;
@@ -172,12 +174,37 @@
             this.CloseApplication.UseVisualStyleBackColor = false;
             this.CloseApplication.Click += new System.EventHandler(this.CloseApplication_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.label5.Location = new System.Drawing.Point(18, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Ad Soyad";
+            // 
+            // Username
+            // 
+            this.Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic);
+            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
+            this.Username.Location = new System.Drawing.Point(18, 76);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(194, 22);
+            this.Username.TabIndex = 21;
+            this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // RegisterPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(227, 301);
+            this.ClientSize = new System.Drawing.Size(227, 333);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.CloseApplication);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.BackBtn);
@@ -210,5 +237,7 @@
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.DateTimePicker Date;
         private System.Windows.Forms.Button CloseApplication;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Username;
     }
 }

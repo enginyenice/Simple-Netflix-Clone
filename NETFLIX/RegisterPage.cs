@@ -28,7 +28,7 @@ namespace NETFLIX
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             Model.Account Account = new Account();
-            int result = Account.CreateAccount(Email.Text, Password.Text, Date.Text);
+            int result = Account.CreateAccount(Username.Text, Email.Text, Password.Text, Date.Value);
             /*
             * Donus:
             *        1 - Hesap Kayıt Edildi.
