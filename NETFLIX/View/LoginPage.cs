@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NETFLIX.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,16 @@ namespace NETFLIX
 {
     public partial class LoginPage : Form
     {
-        readonly Model.Account Account = new Model.Account();
+        readonly UserController userControl = new UserController();
         public LoginPage()
         {
             InitializeComponent();
             
-            String AccountData = Account.RememberMe();
+            String AccountData = userControl.RememberMe();
            
             if(AccountData  != null)
             {
                 String[] AccountSplit = AccountData.Split('|');
-                //Console.WriteLine(AccountSplit[0] + " " + AccountSplit[1]);
                 Email.Text = AccountSplit[0].ToString();
                 Password.Text = AccountSplit[1].ToString();
                 RememberMe.Checked = true;
@@ -38,7 +38,7 @@ namespace NETFLIX
         private void GirisBtn_Click(object sender, EventArgs e)
         {
             
-            if (Account.LoginControl(Email.Text, Password.Text) == true)
+            if (userControl.LoginControl(Email.Text, Password.Text) == true)
             {
                 HomePage homePage = new HomePage();
                 this.Hide();
@@ -62,10 +62,10 @@ namespace NETFLIX
         {
             if(RememberMe.Checked == true)
             {
-               Account.RememberMeCreate(Email.Text,Password.Text);
+               userControl.RememberMeCreate(Email.Text,Password.Text);
             } else
             {
-                Account.RememberMeDelete();
+                userControl.RememberMeDelete();
             }
         }
 

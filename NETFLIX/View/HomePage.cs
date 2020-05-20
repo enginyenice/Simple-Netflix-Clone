@@ -13,14 +13,24 @@ namespace NETFLIX
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        readonly private bool  ilkKayitMi;
+        public HomePage(bool ilkKayitMi = false)
         {
+            this.ilkKayitMi = ilkKayitMi;
             InitializeComponent();
         }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            if(ilkKayitMi == true)
+            {
+                foreach (var item in Program.SelectTypes)
+                {
+                    listBox1.Items.Add(item.TurAdi);
+                }
+            }
             label1.Text = Program.user.KullaniciAdi;
+            label2.Text = "İlk kayıt mı ? : " + ilkKayitMi.ToString();
             dateTimePicker1.Value = Program.user.KullaniciDogumTarihi;
         }
     }

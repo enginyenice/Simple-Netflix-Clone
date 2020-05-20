@@ -8,16 +8,22 @@ using System.Collections;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.Common;
+using NETFLIX.Datas;
 
 namespace NETFLIX.Model
 {
-    class DBConnection
+    class UserModel
     {
-        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NetflixDataBase.accdb");
+
+
+        private readonly DBPath GetDB = new DBPath();
+
+        private readonly OleDbConnection con = new OleDbConnection();
         private OleDbCommand cmd;
         private OleDbDataReader dr;
-        public DBConnection()
+        public UserModel()
         {
+            con.ConnectionString = GetDB.DatabasePath;
             con.Open();
         }
 
@@ -95,7 +101,7 @@ namespace NETFLIX.Model
             }
         }
 
-        ~ DBConnection()
+        ~ UserModel()
         {
             con.Close();
         }

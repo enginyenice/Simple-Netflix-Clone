@@ -1,4 +1,6 @@
-﻿using NETFLIX.Model;
+﻿using NETFLIX.Controller;
+using NETFLIX.Model;
+using NETFLIX.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +29,8 @@ namespace NETFLIX
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
-            Model.Account Account = new Account();
-            int result = Account.CreateAccount(Username.Text, Email.Text, Password.Text, Date.Value);
+            UserController userController = new UserController();
+            int result = userController.CreateAccount(Username.Text, Email.Text, Password.Text, Date.Value);
             /*
             * Donus:
             *        1 - Hesap Kayıt Edildi.
@@ -39,6 +41,9 @@ namespace NETFLIX
             {
                 case 1:
                     MessageBox.Show("Hesap Kayıt Edildi","Kayıt Başarılı",MessageBoxButtons.OK);
+                    RegisterSelectType registerSelectType = new RegisterSelectType();
+                    registerSelectType.Show();
+                    this.Hide();
                     break;
                 case 2:
                     MessageBox.Show("Hesap Kayıt Edilemedi!","Kayıt Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Error);

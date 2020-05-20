@@ -46,33 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomePage.cs">
+    <Compile Include="Controller\RegisterSelectTypeController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Datas\DBPath.cs" />
+    <Compile Include="Model\RegisterSelectTypeModel.cs" />
+    <Compile Include="Model\Type.cs" />
+    <Compile Include="View\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="View\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.cs">
+    <Compile Include="View\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="View\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DBConnection.cs" />
-    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterPage.cs">
+    <Compile Include="View\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterPage.Designer.cs">
+    <Compile Include="View\RegisterPage.Designer.cs">
       <DependentUpon>RegisterPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HomePage.resx">
+    <Compile Include="View\RegisterSelectType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegisterSelectType.Designer.cs">
+      <DependentUpon>RegisterSelectType.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="View\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,8 +94,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegisterPage.resx">
+    <EmbeddedResource Include="View\RegisterPage.resx">
       <DependentUpon>RegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegisterSelectType.resx">
+      <DependentUpon>RegisterSelectType.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

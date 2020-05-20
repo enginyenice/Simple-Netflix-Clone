@@ -10,6 +10,7 @@ namespace NETFLIX
     static class Program
     {
         public static User user = new User();
+        public static List<Model.Type> SelectTypes = new List<Model.Type>();
         /// <summary>
         /// Uygulamanın ana girdi noktası.
         /// </summary>
