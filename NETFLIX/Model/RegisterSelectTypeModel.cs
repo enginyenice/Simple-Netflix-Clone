@@ -20,28 +20,13 @@ namespace NETFLIX.Model
         public RegisterSelectTypeModel()
         {
             con.ConnectionString = GetDB.DatabasePath;
-            con.Open();
+            
         }
 
-
-        public bool AccountCount(String email, string password)
-        {
-            string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='" + email + "'and kullaniciParola='" + password + "'";
-            cmd = new OleDbCommand(sorgu, con);
-            int result = (int)cmd.ExecuteScalar();
-            if (result > 0)
-            {
-                //SelectUser(email, password);
-                return true;
-            }
-
-            return false;
-
-        }
         public List<Type> SelectType()
         {
 
-
+            con.Open();
             List<Type> types = new List<Type>();
             string sorgu = "SELECT * from tur";
             cmd = new OleDbCommand(sorgu, con);
@@ -57,29 +42,16 @@ namespace NETFLIX.Model
                 types.Add(type);
                 
             }
-
+            con.Close();
             return types;
 
         }
 
-
-
-        public bool MailCount(String email)
-        {
-            string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='" + email + "'";
-            cmd = new OleDbCommand(sorgu, con);
-            int result = (int)cmd.ExecuteScalar();
-            if (result > 0)
-                return true;
-            return false;
-
-        }
-
-        
+      
 
         ~RegisterSelectTypeModel()
         {
-            con.Close();
+            
         }
     }
 }

@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\HomePageController.cs" />
     <Compile Include="Controller\RegisterSelectTypeController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Datas\DBPath.cs" />
+    <Compile Include="Datas\Program.cs" />
+    <Compile Include="Model\HomePageModel.cs" />
     <Compile Include="Model\RegisterSelectTypeModel.cs" />
-    <Compile Include="Model\Type.cs" />
+    <Compile Include="Datas\Type.cs" />
     <Compile Include="View\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +67,7 @@
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\UserModel.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Datas\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\RegisterPage.cs">
@@ -78,6 +81,12 @@
     </Compile>
     <Compile Include="View\RegisterSelectType.Designer.cs">
       <DependentUpon>RegisterSelectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TurEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TurEkle.Designer.cs">
+      <DependentUpon>TurEkle.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -99,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegisterSelectType.resx">
       <DependentUpon>RegisterSelectType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TurEkle.resx">
+      <DependentUpon>TurEkle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
