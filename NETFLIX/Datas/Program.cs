@@ -15,7 +15,11 @@ namespace NETFLIX.Datas
         private int programBolumSayisi;
         private int programUzunlugu;
         private int toplamPuan;
-        private List<Model.Type> turler;
+        private String turler = "";
+        private int kullaniciPuani;
+        private int izlemeSure;
+        private DateTime izlemeTarihi;
+        private int hangiBolumdeKaldi;
 
         public int Id { get => id; set => id = value; }
         public string ProgramAdi { get => programAdi; set => programAdi = value; }
@@ -23,6 +27,10 @@ namespace NETFLIX.Datas
         public int ProgramBolumSayisi { get => programBolumSayisi; set => programBolumSayisi = value; }
         public int ProgramUzunlugu { get => programUzunlugu; set => programUzunlugu = value; }
         public int ToplamPuan { get => toplamPuan; set => toplamPuan = value; }
-        public List<Model.Type> Turler { get => turler; set => turler = value; }
+        public string Turler { get => turler; set => turler = value; }
+        public int KullaniciPuani { get => kullaniciPuani; set => kullaniciPuani = value; }
+        public int IzlemeSure { get => izlemeSure; set => izlemeSure = value; }
+        public DateTime IzlemeTarihi { get => izlemeTarihi; set => izlemeTarihi = value; }
+        public int HangiBolumdeKaldi { get => hangiBolumdeKaldi; set => hangiBolumdeKaldi = value; }
     }
 }

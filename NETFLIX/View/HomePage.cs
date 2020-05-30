@@ -1,5 +1,6 @@
 ﻿using NETFLIX.Controller;
 using NETFLIX.Model;
+using NETFLIX.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,67 +18,210 @@ namespace NETFLIX
         readonly private bool  ilkKayitMi;
         public HomePage(bool ilkKayitMi = false)
         {
-            this.ilkKayitMi = ilkKayitMi;
             InitializeComponent();
+            this.ilkKayitMi = ilkKayitMi;
+            this.Opacity = 0;
+
+
         }
 
         readonly HomePageController homePageController = new HomePageController();
+        readonly RegisterSelectTypeController register = new RegisterSelectTypeController();
+
+
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            LoadingPage loading = new LoadingPage();
+            
+            loading.Show();
+            if(ilkKayitMi == false)
+            {
+                tabControl1.TabPages.Remove(tabPage4);
+            }
+            else if (ilkKayitMi == true)
+            {
+                tabControl1.SelectedTab = tabPage4;
+            }
             FilmList.Columns.Add("Film ID", 50);
             FilmList.Columns.Add("Film Adı", 200);
             FilmList.Columns.Add("Film Türü", 300);
             FilmList.Columns.Add("Film Uzunluğu", 100);
-            FilmList.Columns.Add("Puan", 100);
+            ///FilmList.Columns.Add("Puanım", 100);
+            FilmList.Columns.Add("Toplam Puan", 200);
 
-            
-            
+
             DiziList.Columns.Add("Dizi ID", 50);
             DiziList.Columns.Add("Dizi Adı", 200);
             DiziList.Columns.Add("Dizi Türü", 300);
+            DiziList.Columns.Add("Bölüm Uzunluğu", 100);
             DiziList.Columns.Add("Dizi Bölüm Sayısı", 100);
-            DiziList.Columns.Add("Dizi Hangi Bölümde Kaldın", 175);
-            DiziList.Columns.Add("Puan", 100);
+            ///DiziList.Columns.Add("Puanım", 100);
+            DiziList.Columns.Add("Toplam Puan", 200);
 
 
+
+            arananList.Columns.Add("ID", 50);
+            arananList.Columns.Add("Adı", 200);
+            arananList.Columns.Add("Türü", 300);
+            arananList.Columns.Add("Tipi", 150);
+            arananList.Columns.Add("Bölüm Sayısı", 100);
+            arananList.Columns.Add("Hangi Bölümde Kaldın", 175);
+            arananList.Columns.Add("Uzunluğu", 100);
+            ///arananList.Columns.Add("Puanım", 100);
+            arananList.Columns.Add("Toplam Puan", 100);
+
+            VerileriGetir();
+
+            this.Opacity = 100;
+            loading.Hide();
+
+        }
+        private void VerileriGetir()
+        {
+            FilmList.Items.Clear();
+            DiziList.Items.Clear();
+            OnerilenlerList.Items.Clear();
+            arananList.Items.Clear();
+            List<Model.Type> types;
+            types = register.SelectType();
+            foreach (var item in types)
+            {
+                TypeCombo.Items.Add(item.TurAdi);
+                typeIDCombo.Items.Add(item.Id.ToString());
+            }
 
             foreach (var item in homePageController.SelectAllPrograms())
             {
-                List<Model.Type> programTypes = homePageController.GetTypes(item.Id);
-                string TypesText = "";
-                for(int i = 0; i< programTypes.Count;i++)
-                {
-                    TypesText += programTypes[i].TurAdi + " ";
-                }
-
+                //int puanim = homePageController.PuanSorgula(item.Id);
                 if (item.ProgramTipi == 1) // Film
                 {
 
-                    string[] filmData = { item.Id.ToString(), item.ProgramAdi,TypesText, item.ProgramUzunlugu.ToString()+" Dakika", item.ToplamPuan.ToString() };
+                    string[] filmData = { item.Id.ToString(), item.ProgramAdi, item.Turler, item.ProgramUzunlugu.ToString() + " Dakika", item.ToplamPuan.ToString() };
                     ListViewItem filmItem = new ListViewItem(filmData);
                     FilmList.Items.Add(filmItem);
                 }
                 else //Dizi
                 {
-                    string[] diziData = { item.Id.ToString(), item.ProgramAdi, TypesText, item.ProgramBolumSayisi.ToString(),"---",item.ToplamPuan.ToString() };
+                    string[] diziData = { item.Id.ToString(), item.ProgramAdi, item.Turler,item.ProgramUzunlugu.ToString(), item.ProgramBolumSayisi.ToString(), item.ToplamPuan.ToString() };
                     ListViewItem diziItem = new ListViewItem(diziData);
                     DiziList.Items.Add(diziItem);
                 }
 
             }
-            
 
-            if(ilkKayitMi == true)
+
+            if (ilkKayitMi == true)
             {
+                OnerilenlerList.Columns.Add("Film ID", 50);
+                OnerilenlerList.Columns.Add("Adı", 200);
+                OnerilenlerList.Columns.Add("Türü", 300);
+                OnerilenlerList.Columns.Add("Uzunluğu / Bölüm Sayısı", 300);
+                OnerilenlerList.Columns.Add("Puan", 100);
+                label7.Text = "Sevdiğiniz Türler: ";
+
+                foreach (var item in homePageController.OnerilenList())
+                {
+                    string[] onerilenData = { item.Id.ToString(), item.ProgramAdi, item.Turler, item.ProgramUzunlugu.ToString() + " Dakika", item.ToplamPuan.ToString() };
+                    ListViewItem onerilenItem = new ListViewItem(onerilenData);
+                    OnerilenlerList.Items.Add(onerilenItem);
+                }
                 foreach (var item in Program.SelectTypes)
                 {
                     listBox1.Items.Add(item.TurAdi);
+                    label7.Text += item.TurAdi + ", ";
                 }
             }
             label1.Text = Program.user.KullaniciAdi;
             label2.Text = "İlk kayıt mı ? : " + ilkKayitMi.ToString();
             dateTimePicker1.Value = Program.user.KullaniciDogumTarihi;
+        }
+
+        private void FilmList_DoubleClick(object sender, EventArgs e)
+        {
+            if (FilmList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = FilmList.SelectedItems[0];
+                int selectProgramID = Int32.Parse(item.SubItems[0].Text);
+                View.WatchPage watchPage = new WatchPage(selectProgramID);
+                watchPage.ShowDialog();
+            }
+        }
+
+        private void OnerilenlerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FilmList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiziList_DoubleClick(object sender, EventArgs e)
+        {
+            if (DiziList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = DiziList.SelectedItems[0];
+                int selectProgramID = Int32.Parse(item.SubItems[0].Text);
+                View.WatchPage watchPage = new WatchPage(selectProgramID);
+                watchPage.ShowDialog();
+            }
+        }
+
+
+
+        private void OnerilenlerList_DoubleClick(object sender, EventArgs e)
+        {
+            if (OnerilenlerList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = OnerilenlerList.SelectedItems[0];
+                int selectProgramID = Int32.Parse(item.SubItems[0].Text);
+                View.WatchPage watchPage = new WatchPage(selectProgramID);
+                watchPage.ShowDialog();
+            }
+        }
+
+
+        private void SearchButton(object sender, EventArgs e)
+        {
+            string aramaText = "";
+            arananList.Items.Clear();
+            string program = "_____";
+            if (programName.Text.Length > 0)
+            {
+                program = programName.Text;
+                aramaText += "Aranan Kelime: " + program + " ";
+            }
+
+            int turID = -1;
+            if (TypeCombo.SelectedIndex != -1)
+            {
+                turID = Int32.Parse(typeIDCombo.Items[TypeCombo.SelectedIndex].ToString());
+                aramaText += "Aranan Tür: " + TypeCombo.SelectedItem.ToString() + " ";
+            }
+
+            foreach (var item in homePageController.SelectPrograms(turID, program))
+            {
+                ///int puanim = homePageController.PuanSorgula(item.Id);
+                string[] aramaData = { item.Id.ToString(), item.ProgramAdi, item.Turler, (item.ProgramTipi == 1) ? "Film" : "Dizi", item.ProgramBolumSayisi.ToString(), "---", item.ProgramUzunlugu.ToString() + " Dakika", item.ToplamPuan.ToString() };
+                ListViewItem aramaItem = new ListViewItem(aramaData);
+                arananList.Items.Add(aramaItem);
+            }
+            label6.Text = aramaText;
+            programName.Text = "";
+            TypeCombo.SelectedIndex = 0;
+        }
+
+        private void ArananList_DoubleClick(object sender, EventArgs e)
+        {
+            if (arananList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = arananList.SelectedItems[0];
+                int selectProgramID = Int32.Parse(item.SubItems[0].Text);
+                View.WatchPage watchPage = new WatchPage(selectProgramID);
+                watchPage.MdiParent = this;
+                watchPage.Show();
+            }
         }
     }
 }

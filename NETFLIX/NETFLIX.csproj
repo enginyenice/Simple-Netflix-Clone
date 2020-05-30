@@ -49,16 +49,24 @@
     <Compile Include="Controller\HomePageController.cs" />
     <Compile Include="Controller\RegisterSelectTypeController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\WatchController.cs" />
     <Compile Include="Datas\DBPath.cs" />
     <Compile Include="Datas\Program.cs" />
     <Compile Include="Model\HomePageModel.cs" />
     <Compile Include="Model\RegisterSelectTypeModel.cs" />
     <Compile Include="Datas\Type.cs" />
+    <Compile Include="Model\WatchModel.cs" />
     <Compile Include="View\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoadingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoadingPage.Designer.cs">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.cs">
       <SubType>Form</SubType>
@@ -82,14 +90,17 @@
     <Compile Include="View\RegisterSelectType.Designer.cs">
       <DependentUpon>RegisterSelectType.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TurEkle.cs">
+    <Compile Include="View\WatchPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TurEkle.Designer.cs">
-      <DependentUpon>TurEkle.cs</DependentUpon>
+    <Compile Include="View\WatchPage.Designer.cs">
+      <DependentUpon>WatchPage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoadingPage.resx">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -109,8 +120,8 @@
     <EmbeddedResource Include="View\RegisterSelectType.resx">
       <DependentUpon>RegisterSelectType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TurEkle.resx">
-      <DependentUpon>TurEkle.cs</DependentUpon>
+    <EmbeddedResource Include="View\WatchPage.resx">
+      <DependentUpon>WatchPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -24,15 +24,17 @@ namespace NETFLIX.Model
         public UserModel()
         {
             con.ConnectionString = GetDB.DatabasePath;
-            con.Open();
+            
         }
 
 
         public bool AccountCount(String email,string password)
         {
+            con.Open();
             string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='"+email+"'and kullaniciParola='"+ password +"'";
             cmd = new OleDbCommand(sorgu, con);
             int result = (int)cmd.ExecuteScalar();
+            con.Close();
             if(result > 0)
             {
                 SelectUser(email, password);
@@ -45,6 +47,7 @@ namespace NETFLIX.Model
         public void SelectUser(String email, string password)
         {
             User user = new User();
+            con.Open();
             string sorgu = "SELECT * from kullanici  WHERE kullaniciEmail='" + email + "'and kullaniciParola='" + password + "'";
             cmd = new OleDbCommand(sorgu, con);
             dr = cmd.ExecuteReader();
@@ -60,6 +63,7 @@ namespace NETFLIX.Model
 
 
             }
+            con.Close();
             Program.user = user;
         }
 
@@ -67,9 +71,11 @@ namespace NETFLIX.Model
 
         public bool MailCount(String email)
         {
+            con.Open();
             string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='" + email + "'";
             cmd = new OleDbCommand(sorgu, con);
             int result = (int)cmd.ExecuteScalar();
+            con.Close();
             if (result > 0)
                 return true;
             return false;
@@ -83,10 +89,12 @@ namespace NETFLIX.Model
                 bool result = MailCount(newUser.KullaniciEmail);
                 if (!result)
                 {
+                    con.Open();
                     string sorgu = "INSERT INTO kullanici (kullaniciAdi, kullaniciEmail, kullaniciParola,kullaniciDogumTarihi)" +
                                     "VALUES('" +newUser.KullaniciAdi + "','" + newUser.KullaniciEmail + "','" + newUser.KullaniciParola + "','" + newUser.KullaniciDogumTarihi + "')";
                     cmd = new OleDbCommand(sorgu, con);
                     int data = cmd.ExecuteNonQuery();
+                    con.Close();
                     if(data >= 1)
                         return 1;
 
@@ -101,10 +109,7 @@ namespace NETFLIX.Model
             }
         }
 
-        ~ UserModel()
-        {
-            con.Close();
-        }
+
 
     }
 }
