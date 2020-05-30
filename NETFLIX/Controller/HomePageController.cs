@@ -71,7 +71,10 @@ namespace NETFLIX.Controller
         {
             dBase.RandomScore();
         }
-
+        public List<Datas.Program> TakipEttigimProgramlar()
+        {
+            return dBase.TakipEttigimProgramlar(programs);
+        }
 
     }
 }

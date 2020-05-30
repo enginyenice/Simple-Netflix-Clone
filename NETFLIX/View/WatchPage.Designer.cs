@@ -281,6 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
@@ -306,6 +307,7 @@
             this.Controls.Add(this.label1);
             this.Name = "WatchPage";
             this.Text = "WatchPage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WatchPage_FormClosing);
             this.Load += new System.EventHandler(this.WatchPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

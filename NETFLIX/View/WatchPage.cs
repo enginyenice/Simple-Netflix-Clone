@@ -198,5 +198,10 @@ namespace NETFLIX.View
 
 
         }
+
+        private void WatchPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+        }
     }
 }

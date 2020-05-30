@@ -1,4 +1,5 @@
-﻿using NETFLIX.Model;
+﻿using NETFLIX.Datas;
+using NETFLIX.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,8 +46,7 @@ namespace NETFLIX.Controller
         }
         public string RememberMe()
         {
-            string baslangicYolu = Application.StartupPath;
-            string dosya_yolu = baslangicYolu + "//NETFLIXACCOUNT.nfx";
+            string dosya_yolu = DBPath.rememberMePath;
             FileStream fs = new FileStream(dosya_yolu, FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sw = new StreamReader(fs);
             string text = sw.ReadLine();
@@ -56,8 +56,7 @@ namespace NETFLIX.Controller
         }
         public void RememberMeCreate(String email, String password)
         {
-            string baslangicYolu = Application.StartupPath;
-            string dosya_yolu = baslangicYolu + "//NETFLIXACCOUNT.nfx";
+            string dosya_yolu = DBPath.rememberMePath;
             FileStream fs = new FileStream(dosya_yolu, FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine(email + "|" + password);
@@ -66,8 +65,7 @@ namespace NETFLIX.Controller
         }
         public void RememberMeDelete()
         {
-            string baslangicYolu = Application.StartupPath;
-            string dosya_yolu = baslangicYolu + "//NETFLIXACCOUNT.nfx";
+            string dosya_yolu = DBPath.rememberMePath;
             System.IO.File.Delete(dosya_yolu);
         }
     }

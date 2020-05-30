@@ -179,6 +179,55 @@ namespace NETFLIX.Model
 
 
         }
+        public List<Datas.Program> TakipEttigimProgramlar(List<Datas.Program> programlar)
+        {
+            List<Datas.Program> programs = new List<Datas.Program>();
+            con.Open();
+#pragma warning disable IDE0059 // Bir değerin gereksiz ataması
+            DateTime izlemeTarihi = DateTime.MinValue;
+#pragma warning restore IDE0059 // Bir değerin gereksiz ataması
+
+            string sorgu = "SELECT * FROM kullaniciProgram WHERE kullaniciID ="+Program.user.Id+"";
+            cmd = new OleDbCommand(sorgu, con);
+            dr = cmd.ExecuteReader();
+            var idArray = new ArrayList();
+            var izlemeSuresiArray = new ArrayList();
+            var hangiBolumdeKaldiArray = new ArrayList();
+            var verilenPuanArray = new ArrayList();
+            var izlemeTarihiArray = new ArrayList();
+            while (dr.Read())
+            {
+                idArray.Add(Int32.Parse(dr["programID"].ToString()));
+                izlemeSuresiArray.Add(Int32.Parse(dr["izlemeSuresi"].ToString()));
+                hangiBolumdeKaldiArray.Add(Int32.Parse(dr["hangiBolumdeKaldi"].ToString()));
+                verilenPuanArray.Add(Int32.Parse(dr["verilenPuan"].ToString()));
+                izlemeTarihiArray.Add(DateTime.Parse(dr["izlemeTarihi"].ToString()));
+
+
+
+
+            }
+            con.Close();
+
+            for(int i = 0;i<idArray.Count;i++)
+            {
+                foreach (var item in programlar)
+                {
+                    if(item.Id == Int32.Parse(idArray[i].ToString()))
+                    {
+                        item.IzlemeSure = Int32.Parse(izlemeSuresiArray[i].ToString());
+                        item.IzlemeTarihi = DateTime.Parse(izlemeTarihiArray[i].ToString());
+                        item.KullaniciPuani = Int32.Parse(verilenPuanArray[i].ToString());
+                        item.HangiBolumdeKaldi = Int32.Parse(hangiBolumdeKaldiArray[i].ToString());
+
+                        programs.Add(item);
+                    }
+                }
+            }
+
+            return programs;
+        }
+
 
     }
 }
