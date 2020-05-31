@@ -34,9 +34,9 @@
             this.CreateAccount = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.RememberMe = new System.Windows.Forms.CheckBox();
             this.CloseApplication = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Email
@@ -48,8 +48,7 @@
             this.Email.Location = new System.Drawing.Point(12, 74);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(194, 22);
-            this.Email.TabIndex = 0;
-            this.Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Email.TabIndex = 1;
             // 
             // Password
             // 
@@ -61,36 +60,40 @@
             this.Password.Name = "Password";
             this.Password.PasswordChar = '•';
             this.Password.Size = new System.Drawing.Size(194, 22);
-            this.Password.TabIndex = 1;
-            this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Password.TabIndex = 2;
             // 
             // GirisBtn
             // 
-            this.GirisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.GirisBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.GirisBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.GirisBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.GirisBtn.FlatAppearance.BorderSize = 2;
+            this.GirisBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.GirisBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.GirisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GirisBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.GirisBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.GirisBtn.Location = new System.Drawing.Point(12, 150);
             this.GirisBtn.Name = "GirisBtn";
             this.GirisBtn.Size = new System.Drawing.Size(100, 30);
-            this.GirisBtn.TabIndex = 2;
+            this.GirisBtn.TabIndex = 4;
             this.GirisBtn.Text = "Giriş Yap";
             this.GirisBtn.UseVisualStyleBackColor = false;
             this.GirisBtn.Click += new System.EventHandler(this.GirisBtn_Click);
             // 
             // CreateAccount
             // 
-            this.CreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.CreateAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CreateAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.CreateAccount.FlatAppearance.BorderSize = 2;
+            this.CreateAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CreateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.CreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.CreateAccount.Location = new System.Drawing.Point(12, 185);
             this.CreateAccount.Name = "CreateAccount";
             this.CreateAccount.Size = new System.Drawing.Size(194, 30);
-            this.CreateAccount.TabIndex = 3;
+            this.CreateAccount.TabIndex = 5;
             this.CreateAccount.Text = "Hesap Oluştur";
             this.CreateAccount.UseVisualStyleBackColor = false;
             this.CreateAccount.Click += new System.EventHandler(this.CreateAccount_Click);
@@ -117,17 +120,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Şifre";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.label3.Location = new System.Drawing.Point(52, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 31);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "NETFLIX";
-            // 
             // RememberMe
             // 
             this.RememberMe.AutoSize = true;
@@ -135,7 +127,7 @@
             this.RememberMe.Location = new System.Drawing.Point(127, 157);
             this.RememberMe.Name = "RememberMe";
             this.RememberMe.Size = new System.Drawing.Size(78, 17);
-            this.RememberMe.TabIndex = 7;
+            this.RememberMe.TabIndex = 3;
             this.RememberMe.Tag = "asdasdas";
             this.RememberMe.Text = "Beni hatırla";
             this.RememberMe.UseVisualStyleBackColor = true;
@@ -143,18 +135,31 @@
             // 
             // CloseApplication
             // 
-            this.CloseApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.CloseApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.CloseApplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.CloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CloseApplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.CloseApplication.Location = new System.Drawing.Point(12, 221);
             this.CloseApplication.Name = "CloseApplication";
             this.CloseApplication.Size = new System.Drawing.Size(194, 30);
-            this.CloseApplication.TabIndex = 8;
+            this.CloseApplication.TabIndex = 6;
             this.CloseApplication.Text = "Programı Kapat";
             this.CloseApplication.UseVisualStyleBackColor = false;
             this.CloseApplication.Click += new System.EventHandler(this.CloseApplication_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.label4.Location = new System.Drawing.Point(34, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 37);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "NETFLIX";
             // 
             // LoginPage
             // 
@@ -162,9 +167,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(218)))), ((int)(((byte)(220)))));
             this.ClientSize = new System.Drawing.Size(217, 267);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.CloseApplication);
             this.Controls.Add(this.RememberMe);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CreateAccount);
@@ -190,9 +195,9 @@
         private System.Windows.Forms.Button CreateAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox RememberMe;
         private System.Windows.Forms.Button CloseApplication;
+        private System.Windows.Forms.Label label4;
     }
 }
 

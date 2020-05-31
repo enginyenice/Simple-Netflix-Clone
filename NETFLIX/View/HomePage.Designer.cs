@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.Films = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DiziList = new System.Windows.Forms.ListView();
@@ -53,8 +49,8 @@
             this.arananList = new System.Windows.Forms.ListView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Logout = new System.Windows.Forms.Button();
             this.TakipBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,43 +66,9 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(19, 99);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(422, 16);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(200, 196);
-            this.listBox1.TabIndex = 3;
             // 
             // Films
             // 
@@ -132,6 +94,9 @@
             // 
             // DiziList
             // 
+            this.DiziList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DiziList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.DiziList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.DiziList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
@@ -148,6 +113,9 @@
             // 
             // FilmList
             // 
+            this.FilmList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FilmList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.FilmList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.FilmList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
@@ -165,16 +133,18 @@
             // 
             // OnerilenlerList
             // 
+            this.OnerilenlerList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.OnerilenlerList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.OnerilenlerList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.OnerilenlerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.OnerilenlerList.FullRowSelect = true;
             this.OnerilenlerList.GridLines = true;
             this.OnerilenlerList.HideSelection = false;
-            this.OnerilenlerList.Location = new System.Drawing.Point(10, 42);
+            this.OnerilenlerList.Location = new System.Drawing.Point(10, 66);
             this.OnerilenlerList.Name = "OnerilenlerList";
-            this.OnerilenlerList.Size = new System.Drawing.Size(1060, 380);
-            this.OnerilenlerList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.OnerilenlerList.Size = new System.Drawing.Size(1060, 356);
             this.OnerilenlerList.TabIndex = 9;
             this.OnerilenlerList.UseCompatibleStateImageBehavior = false;
             this.OnerilenlerList.View = System.Windows.Forms.View.Details;
@@ -197,7 +167,6 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -284,7 +253,12 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.button1.Location = new System.Drawing.Point(986, 12);
@@ -297,6 +271,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(710, 16);
             this.label5.Name = "label5";
@@ -306,6 +281,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(765, 41);
             this.label4.Name = "label4";
@@ -315,6 +291,7 @@
             // 
             // programName
             // 
+            this.programName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.programName.Location = new System.Drawing.Point(803, 12);
             this.programName.Name = "programName";
             this.programName.Size = new System.Drawing.Size(177, 22);
@@ -322,6 +299,7 @@
             // 
             // TypeCombo
             // 
+            this.TypeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TypeCombo.FormattingEnabled = true;
             this.TypeCombo.Location = new System.Drawing.Point(803, 40);
             this.TypeCombo.Name = "TypeCombo";
@@ -331,6 +309,9 @@
             // 
             // arananList
             // 
+            this.arananList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.arananList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.arananList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.arananList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
@@ -361,28 +342,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 23);
+            this.label7.Location = new System.Drawing.Point(8, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 11;
             this.label7.Text = "label7";
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.listBox1);
-            this.tabPage5.Controls.Add(this.dateTimePicker1);
-            this.tabPage5.Controls.Add(this.label2);
-            this.tabPage5.Controls.Add(this.label1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1076, 432);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Kalabalık";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage6.Controls.Add(this.pictureBox1);
             this.tabPage6.Controls.Add(this.Logout);
             this.tabPage6.Controls.Add(this.TakipBtn);
             this.tabPage6.Controls.Add(this.label10);
@@ -399,15 +368,28 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Hesabım";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 83);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // Logout
             // 
+            this.Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.Logout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.Logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.Logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.Logout.Location = new System.Drawing.Point(920, 10);
+            this.Logout.Location = new System.Drawing.Point(903, 10);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(148, 36);
+            this.Logout.Size = new System.Drawing.Size(165, 36);
             this.Logout.TabIndex = 13;
             this.Logout.Text = "Oturumu Kapat";
             this.Logout.UseVisualStyleBackColor = false;
@@ -415,7 +397,11 @@
             // 
             // TakipBtn
             // 
+            this.TakipBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TakipBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.TakipBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.TakipBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.TakipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.TakipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TakipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TakipBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
@@ -440,15 +426,18 @@
             // 
             // TakipEttigimProgramlarList
             // 
+            this.TakipEttigimProgramlarList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TakipEttigimProgramlarList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.TakipEttigimProgramlarList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TakipEttigimProgramlarList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.TakipEttigimProgramlarList.FullRowSelect = true;
             this.TakipEttigimProgramlarList.GridLines = true;
             this.TakipEttigimProgramlarList.HideSelection = false;
             this.TakipEttigimProgramlarList.Location = new System.Drawing.Point(11, 132);
             this.TakipEttigimProgramlarList.Name = "TakipEttigimProgramlarList";
             this.TakipEttigimProgramlarList.Size = new System.Drawing.Size(1057, 292);
-            this.TakipEttigimProgramlarList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.TakipEttigimProgramlarList.TabIndex = 6;
             this.TakipEttigimProgramlarList.UseCompatibleStateImageBehavior = false;
             this.TakipEttigimProgramlarList.View = System.Windows.Forms.View.Details;
@@ -457,7 +446,7 @@
             // dogumtarihi
             // 
             this.dogumtarihi.AutoSize = true;
-            this.dogumtarihi.Location = new System.Drawing.Point(124, 76);
+            this.dogumtarihi.Location = new System.Drawing.Point(231, 77);
             this.dogumtarihi.Name = "dogumtarihi";
             this.dogumtarihi.Size = new System.Drawing.Size(52, 16);
             this.dogumtarihi.TabIndex = 5;
@@ -466,7 +455,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 76);
+            this.label14.Location = new System.Drawing.Point(115, 77);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 16);
             this.label14.TabIndex = 4;
@@ -475,7 +464,7 @@
             // eposta
             // 
             this.eposta.AutoSize = true;
-            this.eposta.Location = new System.Drawing.Point(124, 47);
+            this.eposta.Location = new System.Drawing.Point(231, 48);
             this.eposta.Name = "eposta";
             this.eposta.Size = new System.Drawing.Size(52, 16);
             this.eposta.TabIndex = 3;
@@ -484,7 +473,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 47);
+            this.label12.Location = new System.Drawing.Point(115, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 16);
             this.label12.TabIndex = 2;
@@ -493,7 +482,7 @@
             // adsoyad
             // 
             this.adsoyad.AutoSize = true;
-            this.adsoyad.Location = new System.Drawing.Point(124, 20);
+            this.adsoyad.Location = new System.Drawing.Point(231, 21);
             this.adsoyad.Name = "adsoyad";
             this.adsoyad.Size = new System.Drawing.Size(52, 16);
             this.adsoyad.TabIndex = 1;
@@ -502,7 +491,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 20);
+            this.label9.Location = new System.Drawing.Point(115, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 16);
             this.label9.TabIndex = 0;
@@ -516,7 +505,10 @@
             this.ClientSize = new System.Drawing.Size(1084, 461);
             this.Controls.Add(this.tabControl1);
             this.Name = "HomePage";
-            this.Text = "HomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "NETFLIX";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomePage_FormClosed);
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -527,20 +519,14 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label Films;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView DiziList;
@@ -552,7 +538,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox programName;
         private System.Windows.Forms.ComboBox TypeCombo;
         private System.Windows.Forms.ListView arananList;
@@ -574,5 +559,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView TakipEttigimProgramlarList;
         private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

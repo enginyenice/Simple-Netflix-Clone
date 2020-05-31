@@ -45,11 +45,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
-            this.label3.Location = new System.Drawing.Point(47, 9);
+            this.label3.Location = new System.Drawing.Point(41, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 31);
+            this.label3.Size = new System.Drawing.Size(156, 37);
             this.label3.TabIndex = 11;
             this.label3.Text = "NETFLIX";
             // 
@@ -84,7 +84,7 @@
             this.Password.Location = new System.Drawing.Point(18, 164);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(194, 22);
-            this.Password.TabIndex = 8;
+            this.Password.TabIndex = 3;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Email
@@ -96,7 +96,7 @@
             this.Email.Location = new System.Drawing.Point(18, 120);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(194, 22);
-            this.Email.TabIndex = 7;
+            this.Email.TabIndex = 2;
             this.Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -112,32 +112,36 @@
             // 
             // RegisterBtn
             // 
-            this.RegisterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.RegisterBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.RegisterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.RegisterBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.RegisterBtn.FlatAppearance.BorderSize = 2;
+            this.RegisterBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.RegisterBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.RegisterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.RegisterBtn.Location = new System.Drawing.Point(115, 236);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(97, 37);
-            this.RegisterBtn.TabIndex = 14;
+            this.RegisterBtn.TabIndex = 5;
             this.RegisterBtn.Text = "Kayıt Ol";
             this.RegisterBtn.UseVisualStyleBackColor = false;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // BackBtn
             // 
-            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.BackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.BackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.BackBtn.FlatAppearance.BorderSize = 2;
+            this.BackBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.BackBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.BackBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.BackBtn.Location = new System.Drawing.Point(18, 236);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(91, 37);
-            this.BackBtn.TabIndex = 15;
+            this.BackBtn.TabIndex = 6;
             this.BackBtn.Text = "Geri";
             this.BackBtn.UseVisualStyleBackColor = false;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
@@ -156,20 +160,22 @@
             this.Date.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(194, 22);
-            this.Date.TabIndex = 19;
+            this.Date.TabIndex = 4;
             // 
             // CloseApplication
             // 
-            this.CloseApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.CloseApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.CloseApplication.FlatAppearance.BorderSize = 2;
+            this.CloseApplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.CloseApplication.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.CloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.CloseApplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.CloseApplication.Location = new System.Drawing.Point(18, 279);
             this.CloseApplication.Name = "CloseApplication";
             this.CloseApplication.Size = new System.Drawing.Size(194, 37);
-            this.CloseApplication.TabIndex = 20;
+            this.CloseApplication.TabIndex = 7;
             this.CloseApplication.Text = "Programı Kapat";
             this.CloseApplication.UseVisualStyleBackColor = false;
             this.CloseApplication.Click += new System.EventHandler(this.CloseApplication_Click);
@@ -194,7 +200,7 @@
             this.Username.Location = new System.Drawing.Point(18, 76);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(194, 22);
-            this.Username.TabIndex = 21;
+            this.Username.TabIndex = 1;
             this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RegisterPage
@@ -220,6 +226,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterPage";
+            this.Load += new System.EventHandler(this.RegisterPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

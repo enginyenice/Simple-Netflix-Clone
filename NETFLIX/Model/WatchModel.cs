@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +14,9 @@ namespace NETFLIX.Model
     {
         private readonly DBPath GetDB = new DBPath();
 
-        private readonly OleDbConnection con = new OleDbConnection();
-        private OleDbCommand cmd;
-        private OleDbDataReader dr;
+        private readonly SQLiteConnection con = new SQLiteConnection();
+        private SQLiteCommand cmd;
+        private SQLiteDataReader dr;
 
         public WatchModel()
         {
@@ -31,14 +31,14 @@ namespace NETFLIX.Model
             con.Open();
             List<Datas.Program> programs = new List<Datas.Program>();
             string sorgu = "SELECT program.id, program.programAdi, program.programBolumSayisi,program.programTipi,program.programUzunlugu,program.toplamPuan,tur.turAdi,tur.id FROM program, programTur, tur WHERE program.id = " + id + " AND programTur.programId = program.id AND programTur.turId = tur.id; ";
-            cmd = new OleDbCommand(sorgu, con);
+            cmd = new SQLiteCommand(sorgu, con);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
                 Datas.Program program = new Datas.Program
                 {
-                    Id = Int32.Parse(dr["program.id"].ToString()),
+                    Id = Int32.Parse(dr["id"].ToString()),
                     ProgramAdi = dr["programAdi"].ToString(),
                     ProgramBolumSayisi = Int32.Parse(dr["programBolumSayisi"].ToString()),
                     ProgramTipi = Int32.Parse(dr["programTipi"].ToString()),
@@ -70,8 +70,9 @@ namespace NETFLIX.Model
             int userID = Program.user.Id;
             int programID = id;
             string puanVarMiSorgu = "SELECT count(*) FROM program, kullaniciProgram, kullanici WHERE kullaniciProgram.programID = program.id AND kullaniciProgram.kullaniciID = kullanici.id AND kullanici.id = " + userID + " AND program.id= " + programID + ";";
-            cmd = new OleDbCommand(puanVarMiSorgu, con);
-            int puanVarMi = (int)cmd.ExecuteScalar();
+            cmd = new SQLiteCommand(puanVarMiSorgu, con);
+            //MessageBox.Show(cmd.ExecuteScalar().ToString());
+            int puanVarMi = Int32.Parse(cmd.ExecuteScalar().ToString());
             con.Close();
 
             if (puanVarMi > 0)
@@ -79,14 +80,14 @@ namespace NETFLIX.Model
                 con.Open();
                 string puanSorgu = "SELECT * FROM program, kullaniciProgram, kullanici WHERE kullaniciProgram.programID = program.id AND kullaniciProgram.kullaniciID = kullanici.id AND kullanici.id = " + userID + " AND program.id= " + programID + " ORDER BY program.programUzunlugu DESC; ";
 
-                cmd = new OleDbCommand(puanSorgu, con);
+                cmd = new SQLiteCommand(puanSorgu, con);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    //Console.WriteLine(dr["verilenPuan"]);
-                    //Console.WriteLine(dr["izlemeSuresi"]);
-                    //Console.WriteLine(dr["izlemeTarihi"]);
-                    Console.WriteLine(dr["HangiBolumdeKaldi"]);
+                    //Console.WriteLine(dr["verilenPuan"].ToString());
+                   // Console.WriteLine(dr["izlemeSuresi"].ToString());
+                   //Console.WriteLine(dr["izlemeTarihi"].ToString());
+                   // Console.WriteLine(dr["izlemeTarihi"].GetType());
 
 
                     
@@ -128,8 +129,8 @@ namespace NETFLIX.Model
             if (result > 0)
             {
                 con.Open();
-                string sorgu = "UPDATE kullaniciProgram SET verilenPuan="+value+" WHERE kullaniciID="+ userID + "and programID=" + id + "";
-                cmd = new OleDbCommand(sorgu, con);
+                string sorgu = "UPDATE kullaniciProgram SET verilenPuan="+value+" WHERE kullaniciID="+ userID + " and programID=" + id + "";
+                cmd = new SQLiteCommand(sorgu, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -139,7 +140,7 @@ namespace NETFLIX.Model
                 con.Open();
                 string sorgu = "INSERT INTO kullaniciProgram (verilenPuan ,kullaniciID,programID)" +
                                 "VALUES(" + value + "," + userID + "," + id + ")";
-                cmd = new OleDbCommand(sorgu, con);
+                cmd = new SQLiteCommand(sorgu, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -149,8 +150,8 @@ namespace NETFLIX.Model
         {
             con.Open();
             string sorgu = "SELECT count(*)  from kullaniciProgram WHERE kullaniciID=" + userID + " and programID=" + id + "";
-            cmd = new OleDbCommand(sorgu, con);
-            int result = (int)cmd.ExecuteScalar();
+            cmd = new SQLiteCommand(sorgu, con);
+            int result = Int32.Parse(cmd.ExecuteScalar().ToString());
             con.Close();
             return result;
         }
@@ -163,17 +164,23 @@ namespace NETFLIX.Model
             if(result > 0)
             {
                 con.Open();
-                string sorgu = "UPDATE kullaniciProgram SET izlemeTarihi = '"+ tamzaman + "', izlemeSuresi= "+ sure + ", hangiBolumdeKaldi= "+ bolum + " WHERE kullaniciID=" + userID + "and programID=" + id + "";
-                cmd = new OleDbCommand(sorgu, con);
+                string sorgu = "UPDATE kullaniciProgram SET " +
+                    "izlemeTarihi = '"+ tamzaman + "' ," +
+                    " izlemeSuresi= "+ sure + " ," +
+                    " hangiBolumdeKaldi= "+ bolum + " " +
+                    " WHERE kullaniciID=" + userID + " and " +
+                    " programID=" + id + "";
+                cmd = new SQLiteCommand(sorgu, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
             } else
             {
                 con.Open();
-                string sorgu = "INSERT INTO kullaniciProgram (izlemeTarihi, izlemeSuresi, hangiBolumdeKaldi,kullaniciID,programID)" +
-                                "VALUES('" + tamzaman + "'," + sure + "," + bolum + "," + userID + "," + id + ")";
-                cmd = new OleDbCommand(sorgu, con);
+                string sorgu = "INSERT INTO kullaniciProgram" +
+                    " (izlemeTarihi, izlemeSuresi, hangiBolumdeKaldi,kullaniciID,programID)" +
+                    "VALUES('" + tamzaman + "'," + sure + "," + bolum + "," + userID + "," + id + ")";
+                cmd = new SQLiteCommand(sorgu, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

@@ -33,16 +33,33 @@ namespace NETFLIX.View
         List<Datas.Program> LastProgram = new List<Datas.Program>();
         private void WatchPage_Load(object sender, EventArgs e)
         {
-
+            this.Icon = Properties.Resources.netflix;
+            LastProgram = watchController.SelectProgram(myProgramID);
             for (int i = 1; i <= 10; i++)
             {
                 PuanCombo.Items.Add(i.ToString());
+            }
+            comboBox1.Visible = false;
+            label20.Visible = false;
+            if (LastProgram[0].ProgramTipi == 0)
+            {
+                comboBox1.Visible = true;
+                label20.Visible = true;
+                for (int i = 1; i<= LastProgram[0].ProgramBolumSayisi;i++)
+                {
+                    comboBox1.Items.Add(i.ToString()+" .Bölüm");
+                }
+            }
+            if(LastProgram[0].IzlemeSure > 0 ||LastProgram[0].HangiBolumdeKaldi >= 1)
+            {
+                button1.Text = "İzlemeye Devam Et";
             }
 
 
 
 
-            LastProgram = watchController.SelectProgram(myProgramID);
+
+            
             this.Text = LastProgram[0].ProgramAdi;
 
             if (LastProgram[0].KullaniciPuani == 0)
@@ -55,16 +72,14 @@ namespace NETFLIX.View
                 PuanCombo.SelectedIndex = LastProgram[0].KullaniciPuani - 1;
             }
             programSuresi = LastProgram[0].ProgramUzunlugu;
-            if (LastProgram[0].ProgramTipi == 1)
-            {
-                label13.Visible = false;
-                label14.Visible = false;
-            }
             label12.Text = (LastProgram[0].ProgramTipi == 1) ? "Film" : "Dizi";
             bolumSayisi = LastProgram[0].ProgramBolumSayisi;
             
+            
             izlenenBolum = Int32.Parse(LastProgram[0].HangiBolumdeKaldi.ToString());
             izlenenSure = Int32.Parse(LastProgram[0].IzlemeSure.ToString());
+            label22.Text = izlenenBolum.ToString();
+            comboBox1.Text = "";
             VerileriGuncelle();
 
 
@@ -99,25 +114,31 @@ namespace NETFLIX.View
 
         private void PuanGonder_Click(object sender, EventArgs e)
         {
-            int value = Int32.Parse(PuanCombo.SelectedItem.ToString());
-            if (value < 11 && value > 0)
+            if(PuanCombo.SelectedIndex > -1)
             {
-                watchController.PuanGonder(value, myProgramID);
-                //  verileriGuncelle();
-                MessageBox.Show("Puan başarıyla eklendi");
-            }
-            else
+                int value = Int32.Parse(PuanCombo.SelectedItem.ToString());
+                if (value < 11 && value > 0)
+                {
+                    watchController.PuanGonder(value, myProgramID);
+                    //  verileriGuncelle();
+                    MessageBox.Show("Puan başarıyla eklendi");
+                }
+                else
+                {
+                    MessageBox.Show("Hatalı Puan");
+                }
+                if (LastProgram[0].KullaniciPuani == 0)
+                {
+                    label19.Text = "Bu programa oy kullanmadınız";
+                }
+                else
+                {
+                    label19.Text = LastProgram[0].KullaniciPuani.ToString();
+                    PuanCombo.SelectedIndex = LastProgram[0].KullaniciPuani - 1;
+                }
+            } else
             {
-                MessageBox.Show("Hatalı Puan");
-            }
-            if (LastProgram[0].KullaniciPuani == 0)
-            {
-                label19.Text = "Bu programa oy kullanmadınız";
-            }
-            else
-            {
-                label19.Text = LastProgram[0].KullaniciPuani.ToString();
-                PuanCombo.SelectedIndex = LastProgram[0].KullaniciPuani - 1;
+                MessageBox.Show("Puan Seçmediniz.");
             }
             VerileriGuncelle();
         }
@@ -127,15 +148,25 @@ namespace NETFLIX.View
 
             if (calismaDurumu == 0)
             {
-                timer1.Start();
-                calismaDurumu = 1;
+                EnBastanBtn.Enabled = false;
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    izlenenBolum = comboBox1.SelectedIndex + 1;
+                    izlenenSure = 0;
+                    label22.Text = izlenenBolum.ToString();
+                    comboBox1.SelectedIndex = -1;
+                }
 
+                calismaDurumu = 1;
+                
+                timer1.Start();
 
 
             }
             else
             {
-                button1.Text = "Başlat";
+                EnBastanBtn.Enabled = true; ;
+                button1.Text = "Devam Et";
                 timer1.Stop();
                 calismaDurumu = 0;
             }
@@ -146,6 +177,7 @@ namespace NETFLIX.View
 
 
             string text = izlenenBolum + ". Bolum " + izlenenSure + ".Dakika";
+            label22.Text = izlenenBolum.ToString();
             button1.Text = "Durdur: " + text;
             DialogResult cikis;
 
@@ -202,6 +234,22 @@ namespace NETFLIX.View
         private void WatchPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void EnBastanBtn_Click(object sender, EventArgs e)
+        {
+
+            if (calismaDurumu == 0)
+            {
+                EnBastanBtn.Enabled = false;
+                izlenenBolum = 1;
+                izlenenSure = 0;
+                calismaDurumu = 1;
+
+                timer1.Start();
+
+
+            }
         }
     }
 }

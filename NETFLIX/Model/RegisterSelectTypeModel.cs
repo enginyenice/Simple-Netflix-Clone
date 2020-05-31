@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +14,9 @@ namespace NETFLIX.Model
     {
         private readonly DBPath GetDB = new DBPath();
 
-        private readonly OleDbConnection con = new OleDbConnection();
-        private OleDbCommand cmd;
-        private OleDbDataReader dr;
+        private readonly SQLiteConnection con = new SQLiteConnection();
+        private SQLiteCommand cmd;
+        private SQLiteDataReader dr;
         public RegisterSelectTypeModel()
         {
             con.ConnectionString = GetDB.DatabasePath;
@@ -29,7 +29,7 @@ namespace NETFLIX.Model
             con.Open();
             List<Type> types = new List<Type>();
             string sorgu = "SELECT * from tur";
-            cmd = new OleDbCommand(sorgu, con);
+            cmd = new SQLiteCommand(sorgu, con);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -45,13 +45,6 @@ namespace NETFLIX.Model
             con.Close();
             return types;
 
-        }
-
-      
-
-        ~RegisterSelectTypeModel()
-        {
-            
         }
     }
 }

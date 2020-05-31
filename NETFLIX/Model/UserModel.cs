@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.OleDb;
 using System.Collections;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.Common;
 using NETFLIX.Datas;
+using System.Data.SQLite;
 
 namespace NETFLIX.Model
 {
@@ -17,23 +17,25 @@ namespace NETFLIX.Model
 
 
         private readonly DBPath GetDB = new DBPath();
-
-        private readonly OleDbConnection con = new OleDbConnection();
-        private OleDbCommand cmd;
-        private OleDbDataReader dr;
+        
+        private readonly SQLiteConnection con = new SQLiteConnection();
+        private SQLiteCommand cmd;
+        private SQLiteDataReader dr;
         public UserModel()
         {
+            
             con.ConnectionString = GetDB.DatabasePath;
             
         }
 
-
+        
         public bool AccountCount(String email,string password)
         {
             con.Open();
-            string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='"+email+"'and kullaniciParola='"+ password +"'";
-            cmd = new OleDbCommand(sorgu, con);
-            int result = (int)cmd.ExecuteScalar();
+            string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='"+email+"' and kullaniciParola='"+ password +"'";
+            cmd = new SQLiteCommand(sorgu, con);
+            
+            int result = Int32.Parse(cmd.ExecuteScalar().ToString());
             con.Close();
             if(result > 0)
             {
@@ -49,7 +51,7 @@ namespace NETFLIX.Model
             User user = new User();
             con.Open();
             string sorgu = "SELECT * from kullanici  WHERE kullaniciEmail='" + email + "'and kullaniciParola='" + password + "'";
-            cmd = new OleDbCommand(sorgu, con);
+            cmd = new SQLiteCommand(sorgu, con);
             dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -73,8 +75,8 @@ namespace NETFLIX.Model
         {
             con.Open();
             string sorgu = "SELECT count(*)  from kullanici WHERE kullaniciEmail='" + email + "'";
-            cmd = new OleDbCommand(sorgu, con);
-            int result = (int)cmd.ExecuteScalar();
+            cmd = new SQLiteCommand(sorgu, con);
+            int result = Int32.Parse(cmd.ExecuteScalar().ToString());
             con.Close();
             if (result > 0)
                 return true;
@@ -92,7 +94,7 @@ namespace NETFLIX.Model
                     con.Open();
                     string sorgu = "INSERT INTO kullanici (kullaniciAdi, kullaniciEmail, kullaniciParola,kullaniciDogumTarihi)" +
                                     "VALUES('" +newUser.KullaniciAdi + "','" + newUser.KullaniciEmail + "','" + newUser.KullaniciParola + "','" + newUser.KullaniciDogumTarihi + "')";
-                    cmd = new OleDbCommand(sorgu, con);
+                    cmd = new SQLiteCommand(sorgu, con);
                     int data = cmd.ExecuteNonQuery();
                     con.Close();
                     if(data >= 1)
@@ -102,7 +104,7 @@ namespace NETFLIX.Model
 
                 return 3;
             }
-            catch (OleDbException exp)
+            catch (SQLiteException exp)
             {
                 MessageBox.Show(exp.ToString());
                 return 2;

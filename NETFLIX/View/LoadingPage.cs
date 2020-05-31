@@ -19,7 +19,8 @@ namespace NETFLIX.View
 
         private void LoadingPage_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.loginScreen;
+            this.Icon = Properties.Resources.netflix;
+            this.BackgroundImage = Image.FromFile("Assets/loginScreen.png");
         }
     }
 }

@@ -36,38 +36,52 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 87);
+            this.label1.Size = new System.Drawing.Size(287, 107);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // TypeCheckList
             // 
+            this.TypeCheckList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.TypeCheckList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             this.TypeCheckList.FormattingEnabled = true;
-            this.TypeCheckList.Location = new System.Drawing.Point(12, 99);
+            this.TypeCheckList.Location = new System.Drawing.Point(16, 122);
+            this.TypeCheckList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TypeCheckList.Name = "TypeCheckList";
-            this.TypeCheckList.Size = new System.Drawing.Size(215, 229);
-            this.TypeCheckList.TabIndex = 2;
+            this.TypeCheckList.Size = new System.Drawing.Size(285, 276);
+            this.TypeCheckList.TabIndex = 1;
             // 
             // SelectTypeList
             // 
-            this.SelectTypeList.Location = new System.Drawing.Point(12, 334);
+            this.SelectTypeList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.SelectTypeList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.SelectTypeList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectTypeList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.SelectTypeList.Location = new System.Drawing.Point(16, 411);
+            this.SelectTypeList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectTypeList.Name = "SelectTypeList";
-            this.SelectTypeList.Size = new System.Drawing.Size(215, 23);
-            this.SelectTypeList.TabIndex = 3;
+            this.SelectTypeList.Size = new System.Drawing.Size(287, 28);
+            this.SelectTypeList.TabIndex = 2;
             this.SelectTypeList.Text = "Seçimi Tamamla";
-            this.SelectTypeList.UseVisualStyleBackColor = true;
+            this.SelectTypeList.UseVisualStyleBackColor = false;
             this.SelectTypeList.Click += new System.EventHandler(this.SelectTypeList_Click);
             // 
             // RegisterSelectType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 363);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.ClientSize = new System.Drawing.Size(311, 447);
             this.Controls.Add(this.SelectTypeList);
             this.Controls.Add(this.TypeCheckList);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterSelectType";
             this.Text = "RegisterSelectType";
             this.Load += new System.EventHandler(this.RegisterSelectType_Load);

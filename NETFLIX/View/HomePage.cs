@@ -31,6 +31,9 @@ namespace NETFLIX
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            pictureBox1.Image = Image.FromFile("Assets/account.png");
+            this.Icon = Properties.Resources.netflix;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             adsoyad.Text = Program.user.KullaniciAdi;
             eposta.Text = Program.user.KullaniciEmail;
             dogumtarihi.Text = Program.user.KullaniciDogumTarihi.ToShortDateString();
@@ -84,12 +87,13 @@ namespace NETFLIX
             TakipEttigimProgramlarList.Columns.Add("Kaldığım Bölüm", 100);
             TakipEttigimProgramlarList.Columns.Add("Kaldığım Süre", 100);
             TakipEttigimProgramlarList.Columns.Add("Verdiğim Puan", 100);
-            TakipEttigimProgramlarList.Columns.Add("Puan", 100);
+            TakipEttigimProgramlarList.Columns.Add("Toplam Puan", 100);
             TakipEttigimProgramlarList.Columns.Add("İzleme Tarihi", 100);
 
 
             VerileriGetir();
-
+            Search();
+            System.Threading.Thread.Sleep(2000);
             this.Opacity = 100;
             loading.Hide();
 
@@ -145,13 +149,11 @@ namespace NETFLIX
                 }
                 foreach (var item in Program.SelectTypes)
                 {
-                    listBox1.Items.Add(item.TurAdi);
+
                     label7.Text += item.TurAdi + ", ";
                 }
             }
-            label1.Text = Program.user.KullaniciAdi;
-            label2.Text = "İlk kayıt mı ? : " + ilkKayitMi.ToString();
-            dateTimePicker1.Value = Program.user.KullaniciDogumTarihi;
+
         }
 
         private void FilmList_DoubleClick(object sender, EventArgs e)
@@ -202,7 +204,13 @@ namespace NETFLIX
 
         private void SearchButton(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        private void Search()
+        {
             string aramaText = "";
+            TypeCombo.Text = "";
             arananList.Items.Clear();
             string program = "_____";
             if (programName.Text.Length > 0)
@@ -214,7 +222,7 @@ namespace NETFLIX
             int turID = -1;
             if (TypeCombo.SelectedIndex != -1)
             {
-                turID = Int32.Parse(typeIDCombo.Items[TypeCombo.SelectedIndex].ToString()) +1;
+                turID = Int32.Parse(typeIDCombo.Items[TypeCombo.SelectedIndex].ToString()) + 1;
                 aramaText += "Aranan Tür: " + TypeCombo.SelectedItem.ToString() + " ";
             }
 
@@ -268,15 +276,20 @@ namespace NETFLIX
             TakipEttigimProgramlarList.Columns.Add("Verdiğim Puan", 100);
             TakipEttigimProgramlarList.Columns.Add("Puan", 100);
             */
-            foreach (var item in homePageController.TakipEttigimProgramlar())
+            List<Datas.Program> programData = homePageController.TakipEttigimProgramlar();
+            if(programData.Count == 0)
+            {
+                MessageBox.Show("Takip Ettiğiniz Program Bulunmuyor...");
+            }
+            foreach (var item in programData)
             {
                 string[] takipList = { item.Id.ToString(), item.ProgramAdi, item.Turler,
                                        (item.ProgramTipi == 1) ? "Film" : "Dizi",
                                        item.ProgramBolumSayisi.ToString(),
                                        item.ProgramUzunlugu.ToString() + " Dakika",
-                                       item.ToplamPuan.ToString(),item.HangiBolumdeKaldi.ToString(),
-                                       item.IzlemeSure.ToString(),item.KullaniciPuani.ToString(),
-                                       item.IzlemeTarihi.ToShortDateString()};
+                                        item.HangiBolumdeKaldi.ToString(),item.IzlemeSure.ToString(),
+                                      (item.KullaniciPuani != 0)? item.KullaniciPuani.ToString() : "Verilmedi",item.ToplamPuan.ToString(),
+                                       (item.IzlemeTarihi != DateTime.MinValue)? item.IzlemeTarihi.ToShortDateString() : "Başlanmadı"};
                 ListViewItem takipItem = new ListViewItem(takipList);
                 TakipEttigimProgramlarList.Items.Add(takipItem);
             }
@@ -287,6 +300,12 @@ namespace NETFLIX
             this.Hide();
             LoginPage login = new LoginPage();
             login.Show();
+        }
+
+        private void HomePage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("İyi günler dileriz... :)", "NETFLIX");
+            Application.Exit();
         }
     }
 }

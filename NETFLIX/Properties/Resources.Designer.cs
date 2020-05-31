@@ -61,12 +61,12 @@ namespace NETFLIX.Properties {
         }
         
         /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        public static System.Drawing.Bitmap loginScreen {
+        public static System.Drawing.Icon netflix {
             get {
-                object obj = ResourceManager.GetObject("loginScreen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("netflix", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

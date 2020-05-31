@@ -51,6 +51,12 @@ namespace NETFLIX
                 case 3:
                     MessageBox.Show("Böyle Bir Hesap Sisteme Kayıtlı","Kayıt Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
+                case 4:
+                    MessageBox.Show("Hatalı Mail Adresi", "Kayıt Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                case 5:
+                    MessageBox.Show("Ad Soyad ve Şifre en az 6 karakter olmalıdır.", "Kayıt Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
             }
         }
 
@@ -59,6 +65,12 @@ namespace NETFLIX
         private void CloseApplication_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void RegisterPage_Load(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.netflix;
+
         }
     }
 }

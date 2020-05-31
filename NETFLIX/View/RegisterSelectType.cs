@@ -22,10 +22,11 @@ namespace NETFLIX.View
 
         private void RegisterSelectType_Load(object sender, EventArgs e)
         {
+            this.Icon = Properties.Resources.netflix;
             label1.Text = "Merhaba " + Program.user.KullaniciAdi + " senden en çok sevdigin 3 türü seçmeni istiyoruz..";
             foreach (var item in RegisterSelectTypeController.SelectType())
             {
-                TypeCheckList.Items.Add(item.Id + "-" + item.TurAdi);
+                TypeCheckList.Items.Add(item.TurAdi);
             }
         }
 
