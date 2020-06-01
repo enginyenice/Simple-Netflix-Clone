@@ -32,7 +32,8 @@ namespace NETFLIX
         private void HomePage_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile("Assets/account.png");
-            this.Icon = Properties.Resources.netflix;
+            System.Drawing.Icon ico = new System.Drawing.Icon("Assets/netflix.ico");
+            this.Icon = ico;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             LoadingPage loading = new LoadingPage();
             
@@ -154,6 +155,7 @@ namespace NETFLIX
                 }
             }
             TakipEttigim();
+            Search();
         }
 
         private void FilmList_DoubleClick(object sender, EventArgs e)

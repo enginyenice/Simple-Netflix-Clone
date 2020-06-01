@@ -61,6 +61,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.adsoyad = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -180,6 +185,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.FilmList);
             this.tabPage1.Controls.Add(this.Films);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -192,6 +198,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.DiziList);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -204,6 +211,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.typeIDCombo);
@@ -330,6 +338,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.OnerilenlerList);
             this.tabPage4.Controls.Add(this.OnerilenLabel);
@@ -351,6 +360,7 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage6.Controls.Add(this.label15);
             this.tabPage6.Controls.Add(this.HesapAyarlari);
             this.tabPage6.Controls.Add(this.pictureBox1);
             this.tabPage6.Controls.Add(this.Logout);
@@ -378,7 +388,7 @@
             this.HesapAyarlari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HesapAyarlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HesapAyarlari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.HesapAyarlari.Location = new System.Drawing.Point(903, 21);
+            this.HesapAyarlari.Location = new System.Drawing.Point(903, 10);
             this.HesapAyarlari.Name = "HesapAyarlari";
             this.HesapAyarlari.Size = new System.Drawing.Size(165, 36);
             this.HesapAyarlari.TabIndex = 15;
@@ -405,7 +415,7 @@
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.Logout.Location = new System.Drawing.Point(903, 77);
+            this.Logout.Location = new System.Drawing.Point(903, 57);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(165, 36);
             this.Logout.TabIndex = 13;
@@ -497,6 +507,56 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Ad Soyad:";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(761, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "İzlemek istediğiniz programın üzerine çift tıklayınız...";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(761, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(307, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "İzlemek istediğiniz programın üzerine çift tıklayınız...";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(761, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(307, 16);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "İzlemek istediğiniz programın üzerine çift tıklayınız...";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(386, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(307, 16);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "İzlemek istediğiniz programın üzerine çift tıklayınız...";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(761, 111);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(307, 16);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "İzlemek istediğiniz programın üzerine çift tıklayınız...";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,5 +620,10 @@
         private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button HesapAyarlari;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label15;
     }
 }

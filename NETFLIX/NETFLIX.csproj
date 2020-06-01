@@ -153,19 +153,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\loginScreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="netflix.ico" />
-    <None Include="Resources\logo.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SQLite">
       <Version>1.0.112.2</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="netflix.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

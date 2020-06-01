@@ -59,15 +59,5 @@ namespace NETFLIX.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        public static System.Drawing.Icon netflix {
-            get {
-                object obj = ResourceManager.GetObject("netflix", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
     }
 }

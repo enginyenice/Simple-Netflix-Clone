@@ -22,7 +22,8 @@ namespace NETFLIX.View
 
         private void RegisterSelectType_Load(object sender, EventArgs e)
         {
-            this.Icon = Properties.Resources.netflix;
+            System.Drawing.Icon ico = new System.Drawing.Icon("Assets/netflix.ico");
+            this.Icon = ico;
             label1.Text = "Merhaba " + Program.user.KullaniciAdi + " senden en çok sevdigin 3 türü seçmeni istiyoruz..";
             int i = 1;
             foreach (var item in RegisterSelectTypeController.SelectType())

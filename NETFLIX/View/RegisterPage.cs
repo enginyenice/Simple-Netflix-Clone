@@ -69,7 +69,8 @@ namespace NETFLIX
 
         private void RegisterPage_Load(object sender, EventArgs e)
         {
-            this.Icon = Properties.Resources.netflix;
+            System.Drawing.Icon ico = new System.Drawing.Icon("Assets/netflix.ico");
+            this.Icon = ico;
 
         }
     }

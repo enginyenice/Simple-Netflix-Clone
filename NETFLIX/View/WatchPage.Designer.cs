@@ -363,9 +363,9 @@
             this.label20.Location = new System.Drawing.Point(14, 23);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(101, 15);
+            this.label20.Size = new System.Drawing.Size(102, 15);
             this.label20.TabIndex = 23;
-            this.label20.Text = "Sezon Değiştir";
+            this.label20.Text = "Bölüm Değiştir";
             // 
             // label21
             // 
