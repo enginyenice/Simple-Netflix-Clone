@@ -34,9 +34,6 @@ namespace NETFLIX
             pictureBox1.Image = Image.FromFile("Assets/account.png");
             this.Icon = Properties.Resources.netflix;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            adsoyad.Text = Program.user.KullaniciAdi;
-            eposta.Text = Program.user.KullaniciEmail;
-            dogumtarihi.Text = Program.user.KullaniciDogumTarihi.ToShortDateString();
             LoadingPage loading = new LoadingPage();
             
             loading.Show();
@@ -98,8 +95,11 @@ namespace NETFLIX
             loading.Hide();
 
         }
-        private void VerileriGetir()
+        public void VerileriGetir()
         {
+            adsoyad.Text = Program.user.KullaniciAdi;
+            eposta.Text = Program.user.KullaniciEmail;
+            dogumtarihi.Text = Program.user.KullaniciDogumTarihi.ToShortDateString();
             FilmList.Items.Clear();
             DiziList.Items.Clear();
             OnerilenlerList.Items.Clear();
@@ -153,7 +153,7 @@ namespace NETFLIX
                     label7.Text += item.TurAdi + ", ";
                 }
             }
-
+            TakipEttigim();
         }
 
         private void FilmList_DoubleClick(object sender, EventArgs e)
@@ -164,6 +164,10 @@ namespace NETFLIX
                 int selectProgramID = Int32.Parse(item.SubItems[0].Text);
                 View.WatchPage watchPage = new WatchPage(selectProgramID);
                 watchPage.ShowDialog();
+                if(watchPage.Opgave == 1)
+                {
+                    VerileriGetir();
+                }
             }
         }
 
@@ -185,6 +189,10 @@ namespace NETFLIX
                 int selectProgramID = Int32.Parse(item.SubItems[0].Text);
                 View.WatchPage watchPage = new WatchPage(selectProgramID);
                 watchPage.ShowDialog();
+                if (watchPage.Opgave == 1)
+                {
+                    VerileriGetir();
+                }
             }
         }
 
@@ -198,6 +206,10 @@ namespace NETFLIX
                 int selectProgramID = Int32.Parse(item.SubItems[0].Text);
                 View.WatchPage watchPage = new WatchPage(selectProgramID);
                 watchPage.ShowDialog();
+                if (watchPage.Opgave == 1)
+                {
+                    VerileriGetir();
+                }
             }
         }
 
@@ -228,7 +240,6 @@ namespace NETFLIX
 
             foreach (var item in homePageController.SelectPrograms(turID, program))
             {
-                ///int puanim = homePageController.PuanSorgula(item.Id);
                 string[] aramaData = { item.Id.ToString(), item.ProgramAdi, item.Turler, (item.ProgramTipi == 1) ? "Film" : "Dizi", item.ProgramBolumSayisi.ToString(), item.ProgramUzunlugu.ToString() + " Dakika", item.ToplamPuan.ToString() };
                 ListViewItem aramaItem = new ListViewItem(aramaData);
                 arananList.Items.Add(aramaItem);
@@ -244,6 +255,10 @@ namespace NETFLIX
                 int selectProgramID = Int32.Parse(item.SubItems[0].Text);
                 View.WatchPage watchPage = new WatchPage(selectProgramID);
                 watchPage.ShowDialog();
+                                if(watchPage.Opgave == 1)
+                {
+                    VerileriGetir();
+                }
             }
         }
 
@@ -255,6 +270,10 @@ namespace NETFLIX
                 int takiptProgramID = Int32.Parse(item.SubItems[0].Text);
                 View.WatchPage watchPage = new WatchPage(takiptProgramID);
                 watchPage.ShowDialog();
+                if (watchPage.Opgave == 1)
+                {
+                    VerileriGetir();
+                }
             }
         }
 
@@ -262,24 +281,16 @@ namespace NETFLIX
         private void TakipBtn_Click(object sender, EventArgs e)
         {
 
+            TakipEttigim();
+        }
+
+        private void TakipEttigim()
+        {
             TakipEttigimProgramlarList.Items.Clear();
-            /*
-             *             TakipEttigimProgramlarList.Columns.Add("ID", 50);
-            TakipEttigimProgramlarList.Columns.Add("Adı", 200);
-            TakipEttigimProgramlarList.Columns.Add("Türü", 460);
-            TakipEttigimProgramlarList.Columns.Add("Tipi", 50);
-            TakipEttigimProgramlarList.Columns.Add("Bölüm Sayısı", 100);
-            TakipEttigimProgramlarList.Columns.Add("Uzunluğu", 100);
-            ///arananList.Columns.Add("Puanım", 100);
-            TakipEttigimProgramlarList.Columns.Add("Kaldığım Bölüm", 100);
-            TakipEttigimProgramlarList.Columns.Add("Kaldığım Süre", 100);
-            TakipEttigimProgramlarList.Columns.Add("Verdiğim Puan", 100);
-            TakipEttigimProgramlarList.Columns.Add("Puan", 100);
-            */
             List<Datas.Program> programData = homePageController.TakipEttigimProgramlar();
-            if(programData.Count == 0)
+            if (programData.Count == 0)
             {
-                MessageBox.Show("Takip Ettiğiniz Program Bulunmuyor...");
+               // MessageBox.Show("Takip Ettiğiniz Program Bulunmuyor...");
             }
             foreach (var item in programData)
             {
@@ -297,8 +308,13 @@ namespace NETFLIX
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             LoginPage login = new LoginPage();
+            Program.user.Id = -1;
+            Program.user.KullaniciAdi = "";
+            Program.user.KullaniciEmail = "";
+            Program.user.KullaniciParola = "";
+            Program.SelectTypes.Clear();
             login.Show();
         }
 
@@ -306,6 +322,16 @@ namespace NETFLIX
         {
             MessageBox.Show("İyi günler dileriz... :)", "NETFLIX");
             Application.Exit();
+        }
+
+        private void HesapAyarlari_Click(object sender, EventArgs e)
+        {
+            View.AccountSetting accountSetting = new AccountSetting();
+            accountSetting.ShowDialog();
+            if (accountSetting.Opgave == 1)
+            {
+                VerileriGetir();
+            }
         }
     }
 }

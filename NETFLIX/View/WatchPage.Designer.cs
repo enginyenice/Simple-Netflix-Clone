@@ -240,10 +240,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.button1.Location = new System.Drawing.Point(120, 197);
+            this.button1.Location = new System.Drawing.Point(14, 198);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 42);
+            this.button1.Size = new System.Drawing.Size(318, 42);
             this.button1.TabIndex = 5;
             this.button1.Text = "İzlemeye Başla";
             this.button1.UseVisualStyleBackColor = false;
@@ -255,10 +255,10 @@
             this.PuanCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PuanCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.PuanCombo.FormattingEnabled = true;
-            this.PuanCombo.Location = new System.Drawing.Point(120, 51);
+            this.PuanCombo.Location = new System.Drawing.Point(14, 101);
             this.PuanCombo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PuanCombo.Name = "PuanCombo";
-            this.PuanCombo.Size = new System.Drawing.Size(211, 23);
+            this.PuanCombo.Size = new System.Drawing.Size(318, 23);
             this.PuanCombo.TabIndex = 2;
             // 
             // label15
@@ -266,7 +266,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.label15.Location = new System.Drawing.Point(47, 54);
+            this.label15.Location = new System.Drawing.Point(14, 82);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 15);
@@ -282,10 +282,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.button2.Location = new System.Drawing.Point(120, 87);
+            this.button2.Location = new System.Drawing.Point(14, 144);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(211, 43);
+            this.button2.Size = new System.Drawing.Size(318, 43);
             this.button2.TabIndex = 3;
             this.button2.Text = "Puan Gönder";
             this.button2.UseVisualStyleBackColor = false;
@@ -349,10 +349,10 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(120, 13);
+            this.comboBox1.Location = new System.Drawing.Point(14, 45);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(211, 23);
+            this.comboBox1.Size = new System.Drawing.Size(318, 23);
             this.comboBox1.TabIndex = 1;
             // 
             // label20
@@ -360,7 +360,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.label20.Location = new System.Drawing.Point(11, 16);
+            this.label20.Location = new System.Drawing.Point(14, 23);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(101, 15);
@@ -401,10 +401,11 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.groupBox1.Location = new System.Drawing.Point(357, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 229);
+            this.groupBox1.Size = new System.Drawing.Size(361, 282);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bana Özel";
@@ -423,10 +424,10 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.groupBox2.Location = new System.Drawing.Point(12, 245);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.groupBox2.Location = new System.Drawing.Point(14, 298);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(681, 215);
+            this.groupBox2.Size = new System.Drawing.Size(706, 215);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Genel Bilgiler";
@@ -440,10 +441,10 @@
             this.EnBastanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EnBastanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.EnBastanBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.EnBastanBtn.Location = new System.Drawing.Point(120, 140);
+            this.EnBastanBtn.Location = new System.Drawing.Point(14, 250);
             this.EnBastanBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EnBastanBtn.Name = "EnBastanBtn";
-            this.EnBastanBtn.Size = new System.Drawing.Size(211, 42);
+            this.EnBastanBtn.Size = new System.Drawing.Size(318, 42);
             this.EnBastanBtn.TabIndex = 4;
             this.EnBastanBtn.Text = "En Başlan Başla";
             this.EnBastanBtn.UseVisualStyleBackColor = false;
@@ -454,7 +455,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.ClientSize = new System.Drawing.Size(730, 489);
+            this.ClientSize = new System.Drawing.Size(730, 549);
             this.Controls.Add(this.EnBastanBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

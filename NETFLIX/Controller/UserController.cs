@@ -32,7 +32,12 @@ namespace NETFLIX.Controller
         }
         public bool LoginControl(String email, String password)
         {
-            bool result = dB.AccountCount(email, password);
+            bool result = EmailKontrol(email);
+            if (result == true)
+            {
+                result = dB.AccountCount(email, password);
+            }
+
             return result;
         }
         public int CreateAccount(String name, String email, String password, DateTime date)
@@ -49,7 +54,7 @@ namespace NETFLIX.Controller
             {
                 return 4;
             }
-            if(name.Trim().Length <= 6 || password.Trim().Length <= 6)
+            if(name.Trim().Length < 6 || password.Trim().Length < 6)
             {
                 return 5;
             }
@@ -66,6 +71,34 @@ namespace NETFLIX.Controller
                 Program.user = newUser;
             return result;
 
+        }
+        public int AccountSetting(User user)
+        {
+
+            /*
+             * Donus:
+             *        1 - Hesap Kayıt Edildi.
+             *        2 - Hesap Kayıt Edilemedi.
+             *        3 - Böyle Bir Eposta Sisteme Kayıtlı
+             *        5 - Kullanıcı Adı veya şifre kısa
+             */
+            if (user.KullaniciAdi.Trim().Length < 6 || user.KullaniciParola.Trim().Length < 6)
+            {
+                return 5;
+            }
+            User newUser = new User
+            {
+                Id = user.Id,
+                KullaniciAdi = user.KullaniciAdi,
+                KullaniciEmail = Program.user.KullaniciEmail,
+                KullaniciParola = user.KullaniciParola,
+                KullaniciDogumTarihi = user.KullaniciDogumTarihi
+            };
+
+            int result = dB.EditUser(newUser);
+            if (result == 1)
+                Program.user = newUser;
+            return result;
         }
         public string RememberMe()
         {

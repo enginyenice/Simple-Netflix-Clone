@@ -11,6 +11,7 @@ namespace NETFLIX
     {
         public static User user = new User();
         public static List<Model.Type> SelectTypes = new List<Model.Type>();
+        public static int watchFormStatus = 0;
         /// <summary>
         /// Uygulamanın ana girdi noktası.
         /// </summary>

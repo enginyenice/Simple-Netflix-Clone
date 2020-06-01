@@ -50,9 +50,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.HesapAyarlari = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Logout = new System.Windows.Forms.Button();
-            this.TakipBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.TakipEttigimProgramlarList = new System.Windows.Forms.ListView();
             this.dogumtarihi = new System.Windows.Forms.Label();
@@ -234,11 +234,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.label6.Location = new System.Drawing.Point(10, 55);
+            this.label6.Location = new System.Drawing.Point(10, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(12, 16);
+            this.label6.Size = new System.Drawing.Size(84, 16);
             this.label6.TabIndex = 7;
-            this.label6.Text = "-";
+            this.label6.Text = "Son Aranan: ";
             // 
             // typeIDCombo
             // 
@@ -351,9 +351,9 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.tabPage6.Controls.Add(this.HesapAyarlari);
             this.tabPage6.Controls.Add(this.pictureBox1);
             this.tabPage6.Controls.Add(this.Logout);
-            this.tabPage6.Controls.Add(this.TakipBtn);
             this.tabPage6.Controls.Add(this.label10);
             this.tabPage6.Controls.Add(this.TakipEttigimProgramlarList);
             this.tabPage6.Controls.Add(this.dogumtarihi);
@@ -367,6 +367,24 @@
             this.tabPage6.Size = new System.Drawing.Size(1076, 432);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Hesabım";
+            // 
+            // HesapAyarlari
+            // 
+            this.HesapAyarlari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.HesapAyarlari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.HesapAyarlari.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
+            this.HesapAyarlari.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            this.HesapAyarlari.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.HesapAyarlari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HesapAyarlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HesapAyarlari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
+            this.HesapAyarlari.Location = new System.Drawing.Point(903, 21);
+            this.HesapAyarlari.Name = "HesapAyarlari";
+            this.HesapAyarlari.Size = new System.Drawing.Size(165, 36);
+            this.HesapAyarlari.TabIndex = 15;
+            this.HesapAyarlari.Text = "Hesap Ayarları";
+            this.HesapAyarlari.UseVisualStyleBackColor = false;
+            this.HesapAyarlari.Click += new System.EventHandler(this.HesapAyarlari_Click);
             // 
             // pictureBox1
             // 
@@ -387,31 +405,13 @@
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.Logout.Location = new System.Drawing.Point(903, 10);
+            this.Logout.Location = new System.Drawing.Point(903, 77);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(165, 36);
             this.Logout.TabIndex = 13;
             this.Logout.Text = "Oturumu Kapat";
             this.Logout.UseVisualStyleBackColor = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
-            // TakipBtn
-            // 
-            this.TakipBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TakipBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            this.TakipBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.TakipBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            this.TakipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.TakipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TakipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TakipBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(250)))), ((int)(((byte)(238)))));
-            this.TakipBtn.Location = new System.Drawing.Point(637, 93);
-            this.TakipBtn.Name = "TakipBtn";
-            this.TakipBtn.Size = new System.Drawing.Size(431, 36);
-            this.TakipBtn.TabIndex = 12;
-            this.TakipBtn.Text = "Takip Ettiğim Programlar Getir";
-            this.TakipBtn.UseVisualStyleBackColor = false;
-            this.TakipBtn.Click += new System.EventHandler(this.TakipBtn_Click);
             // 
             // label10
             // 
@@ -555,10 +555,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label adsoyad;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button TakipBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView TakipEttigimProgramlarList;
         private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button HesapAyarlari;
     }
 }

@@ -83,6 +83,7 @@
             this.Password.ForeColor = System.Drawing.Color.Black;
             this.Password.Location = new System.Drawing.Point(18, 164);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '•';
             this.Password.Size = new System.Drawing.Size(194, 22);
             this.Password.TabIndex = 3;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

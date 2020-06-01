@@ -181,10 +181,8 @@ namespace NETFLIX.Model
 
         public List<Int32> OnerilenListOlustur(int turId)
         {
-            /*TODO: Uzunluga gore sıraliyor suan*/
             con.Open();
             List<Int32> programIDs = new List<int>();
-            //string sorgu = "SELECT TOP 2 program.id FROM program, programTur, tur WHERE programTur.programId = program.id AND programTur.turId = tur.id AND tur.id = "+turId+" ORDER BY program.toplamPuan DESC,program.id DESC;";
             string sorgu = "SELECT " +
                 "program.id, program.programAdi, tur.id " +
                 "FROM  programTur " +

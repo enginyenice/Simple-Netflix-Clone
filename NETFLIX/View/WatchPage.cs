@@ -50,9 +50,17 @@ namespace NETFLIX.View
                     comboBox1.Items.Add(i.ToString()+" .Bölüm");
                 }
             }
-            if(LastProgram[0].IzlemeSure > 0 ||LastProgram[0].HangiBolumdeKaldi >= 1)
+            if (LastProgram[0].IzlemeSure == 0 && LastProgram[0].HangiBolumdeKaldi == 1)
+            {
+                button1.Text = "İzlemeye Başla";
+            }
+            else if(LastProgram[0].IzlemeSure > 0 || LastProgram[0].HangiBolumdeKaldi >= 1)
             {
                 button1.Text = "İzlemeye Devam Et";
+            }
+            if(LastProgram[0].IzlemeSure == 0 && LastProgram[0].HangiBolumdeKaldi == 1)
+            {
+                EnBastanBtn.Visible = false;
             }
 
 
@@ -148,7 +156,8 @@ namespace NETFLIX.View
 
             if (calismaDurumu == 0)
             {
-                EnBastanBtn.Enabled = false;
+                EnBastanBtn.Visible = false;
+                
                 if (comboBox1.SelectedIndex != -1)
                 {
                     izlenenBolum = comboBox1.SelectedIndex + 1;
@@ -165,7 +174,8 @@ namespace NETFLIX.View
             }
             else
             {
-                EnBastanBtn.Enabled = true; ;
+                
+                EnBastanBtn.Visible = true;
                 button1.Text = "Devam Et";
                 timer1.Stop();
                 calismaDurumu = 0;
@@ -211,7 +221,7 @@ namespace NETFLIX.View
                 }
                 else
                 {
-                    button1.Text = "Bitti " + text;
+                    button1.Text = "Bölüm Sonu " + text;
                     calismaDurumu = 0;
                 }
             }
@@ -233,15 +243,18 @@ namespace NETFLIX.View
 
         private void WatchPage_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             timer1.Stop();
         }
+
+        public int Opgave { get { return 1; } }
 
         private void EnBastanBtn_Click(object sender, EventArgs e)
         {
 
             if (calismaDurumu == 0)
             {
-                EnBastanBtn.Enabled = false;
+                EnBastanBtn.Visible = false;
                 izlenenBolum = 1;
                 izlenenSure = 0;
                 calismaDurumu = 1;
@@ -249,6 +262,9 @@ namespace NETFLIX.View
                 timer1.Start();
 
 
+            } else
+            {
+                EnBastanBtn.Visible = true;
             }
         }
     }

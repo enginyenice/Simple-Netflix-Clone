@@ -111,6 +111,35 @@ namespace NETFLIX.Model
             }
         }
 
+        public int EditUser(User User)
+        {
+
+
+
+            try
+            {
+
+                 
+
+                con.Open();
+                    string sorgu = "UPDATE kullanici SET kullaniciAdi = '"+User.KullaniciAdi+"',kullaniciParola = '"+User.KullaniciParola+"', kullaniciDogumTarihi = '" + User.KullaniciDogumTarihi + "'  WHERE id = " + Program.user.Id + "; ";
+                    cmd = new SQLiteCommand(sorgu, con);
+                    int data = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (data >= 1)
+                        return 1;
+
+            }
+            catch (SQLiteException exp)
+            {
+                MessageBox.Show(exp.ToString());
+                return 2;
+            }
+
+
+
+            return 1;
+        }
 
 
     }

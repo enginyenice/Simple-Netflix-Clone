@@ -122,12 +122,47 @@ namespace NETFLIX.Model
             return programs;
 
         }
+        
+        public void PuanCikart(int id)
+        {
+            con.Open();
+            string PuanSorgu = "SELECT verilenPuan FROM kullaniciProgram WHERE kullaniciID=" + Program.user.Id + " and programID=" + id + "";
+            cmd = new SQLiteCommand(PuanSorgu, con);
+            dr = cmd.ExecuteReader();
+            int eskiPuan = 0;
+            while (dr.Read())
+            {
+                eskiPuan = Int32.Parse(dr["verilenPuan"].ToString());
+            }
+            con.Close();
+
+
+            con.Open();
+            string sorgu = "UPDATE program SET toplamPuan = toplamPuan - "+eskiPuan+" WHERE id="+id+"";
+            cmd = new SQLiteCommand(sorgu, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+        public void PuanEkle(int id, int puan)
+        {
+            con.Open();
+            string sorgu = "UPDATE program SET toplamPuan = toplamPuan + " + puan + " WHERE id=" + id + "";
+            cmd = new SQLiteCommand(sorgu, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        
         public void PuanGonder(int value, int id)
         {
             int userID = Program.user.Id;
             int result = VeriVarMi(userID,id);
             if (result > 0)
             {
+
+                PuanCikart(id);
+                PuanEkle(id, value);
+
                 con.Open();
                 string sorgu = "UPDATE kullaniciProgram SET verilenPuan="+value+" WHERE kullaniciID="+ userID + " and programID=" + id + "";
                 cmd = new SQLiteCommand(sorgu, con);
@@ -137,6 +172,7 @@ namespace NETFLIX.Model
             }
             else
             {
+                PuanEkle(id, value);
                 con.Open();
                 string sorgu = "INSERT INTO kullaniciProgram (verilenPuan ,kullaniciID,programID)" +
                                 "VALUES(" + value + "," + userID + "," + id + ")";

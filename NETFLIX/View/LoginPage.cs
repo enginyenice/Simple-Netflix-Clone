@@ -38,12 +38,8 @@ namespace NETFLIX
         private void GirisBtn_Click(object sender, EventArgs e)
         {
             
-            if(userControl.EmailKontrol(Email.Text) == false)
-            {
-                MessageBox.Show("Hatalı Mail Adresi");
-            }
             
-            else if (userControl.LoginControl(Email.Text, Password.Text) == true)
+            if (userControl.LoginControl(Email.Text, Password.Text) == true)
             {
                 HomePage homePage = new HomePage();
                 this.Hide();
@@ -52,6 +48,9 @@ namespace NETFLIX
             else
             {
                 MessageBox.Show("E-Posta veya şifre hatalı", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                userControl.RememberMeDelete();
+                RememberMe.Checked = false;
+                Password.Text = "";
             }
         }
 

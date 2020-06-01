@@ -24,9 +24,12 @@ namespace NETFLIX.View
         {
             this.Icon = Properties.Resources.netflix;
             label1.Text = "Merhaba " + Program.user.KullaniciAdi + " senden en çok sevdigin 3 türü seçmeni istiyoruz..";
+            int i = 1;
             foreach (var item in RegisterSelectTypeController.SelectType())
             {
-                TypeCheckList.Items.Add(item.TurAdi);
+                TypeCheckList.Items.Add(i+"-"+item.TurAdi);
+                listBox1.Items.Add(item.Id.ToString());
+                i++;
             }
         }
 
@@ -43,7 +46,8 @@ namespace NETFLIX.View
                 {
                     Model.Type type = new Model.Type();
                     string[] words = item.ToString().Split('-');
-                    type.Id = Int32.Parse(words[0]);
+                    listBox1.SelectedIndex = Int32.Parse(words[0]) - 1;
+                    type.Id = Int32.Parse(listBox1.SelectedItem.ToString());
                     type.TurAdi = words[1];
                     Program.SelectTypes.Add(type);
 
