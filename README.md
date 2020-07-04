@@ -6,8 +6,20 @@
 
 ----------------------------------------------
 Proje Detayları: [Proje Detayları (PDF)](https://github.com/nginY26/NETFLIX/blob/master/D%C3%B6k%C3%BCmanlar/Proje.pdf "Proje Detayları (PDF)")
+
+------------
+
+
 Rapor Linki: [Teslim Raporu (PDF)](https://github.com/nginY26/NETFLIX/blob/master/D%C3%B6k%C3%BCmanlar/Rapor.pdf "Teslim Raporu (PDF)")
+
+------------
+
+
 Resimler Linki: [Proje Resimleri](https://github.com/nginY26/NETFLIX/tree/master/D%C3%B6k%C3%BCmanlar/Resimler "Proje Resimleri")
+
+------------
+
+
 Database: [MS Access Database ](https://github.com/nginY26/NETFLIX/blob/master/NETFLIX/bin/Debug/Assets/netflix.db "MS Access Database ")
 
 ----------------------------------------------
