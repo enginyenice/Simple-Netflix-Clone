@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "cHbvyGYI/xr9+3YLTEM79/Hv17HWjxQ4IusRrKE1UnEdRJSJT3IsCkSpv5Y3lgzawaY+KY0rHSz3mcP22PXKpQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\engin\\.nuget\\packages\\entityframework\\6.3.0\\entityframework.6.3.0.nupkg.sha512",
+    "C:\\Users\\engin\\.nuget\\packages\\system.data.sqlite\\1.0.112.2\\system.data.sqlite.1.0.112.2.nupkg.sha512",
+    "C:\\Users\\engin\\.nuget\\packages\\system.data.sqlite.core\\1.0.112.2\\system.data.sqlite.core.1.0.112.2.nupkg.sha512",
+    "C:\\Users\\engin\\.nuget\\packages\\system.data.sqlite.ef6\\1.0.112.2\\system.data.sqlite.ef6.1.0.112.2.nupkg.sha512",
+    "C:\\Users\\engin\\.nuget\\packages\\system.data.sqlite.linq\\1.0.112.2\\system.data.sqlite.linq.1.0.112.2.nupkg.sha512"
+  ],
+  "logs": []
+}

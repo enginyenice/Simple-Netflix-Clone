@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj",
+        "projectName": "NETFLIX",
+        "projectPath": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj",
+        "packagesPath": "C:\\Users\\engin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\engin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.112.2, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

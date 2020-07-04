@@ -1,0 +1,485 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "EntityFramework/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.112.2",
+          "System.Data.SQLite.EF6": "1.0.112.2",
+          "System.Data.SQLite.Linq": "1.0.112.2"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "build": {
+          "build/net40/System.Data.SQLite.Core.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/netstandard2.1/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/netstandard2.1/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/netstandard2.1/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/netstandard2.1/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.3.0"
+        },
+        "compile": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "EntityFramework/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.112.2",
+          "System.Data.SQLite.EF6": "1.0.112.2",
+          "System.Data.SQLite.Linq": "1.0.112.2"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "build": {
+          "build/net40/System.Data.SQLite.Core.targets": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.3.0"
+        },
+        "compile": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "EntityFramework/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.112.2",
+          "System.Data.SQLite.EF6": "1.0.112.2",
+          "System.Data.SQLite.Linq": "1.0.112.2"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll": {},
+          "runtimes/win-x64/native/netstandard2.1/SQLite.Interop.dll": {}
+        },
+        "build": {
+          "build/net40/System.Data.SQLite.Core.targets": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.3.0"
+        },
+        "compile": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "EntityFramework/6.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.112.2",
+          "System.Data.SQLite.EF6": "1.0.112.2",
+          "System.Data.SQLite.Linq": "1.0.112.2"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.dll": {}
+        },
+        "native": {
+          "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll": {},
+          "runtimes/win-x86/native/netstandard2.1/SQLite.Interop.dll": {}
+        },
+        "build": {
+          "build/net40/System.Data.SQLite.Core.targets": {}
+        }
+      },
+      "System.Data.SQLite.EF6/1.0.112.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.3.0"
+        },
+        "compile": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.EF6.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.112.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Data.SQLite.Linq.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EntityFramework/6.3.0": {
+      "sha512": "mEvhoXscTyLFMcnbLzKlbWdx6N8fCY2IMe4drjUTMFqOqI4KThnTPXr1m50oXDJAn5PvCy2e90IcwN/OxkJUjg==",
+      "type": "package",
+      "path": "entityframework/6.3.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/EntityFramework.props",
+        "build/EntityFramework.targets",
+        "build/Microsoft.Data.Entity.Build.Tasks.dll",
+        "buildTransitive/EntityFramework.props",
+        "buildTransitive/EntityFramework.targets",
+        "content/net40/App.config.install.xdt",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.install.xdt",
+        "content/net40/Web.config.transform",
+        "entityframework.6.3.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "lib/netstandard2.1/EntityFramework.SqlServer.dll",
+        "lib/netstandard2.1/EntityFramework.SqlServer.xml",
+        "lib/netstandard2.1/EntityFramework.dll",
+        "lib/netstandard2.1/EntityFramework.xml",
+        "tools/EntityFramework6.PS2.psd1",
+        "tools/EntityFramework6.PS2.psm1",
+        "tools/EntityFramework6.psd1",
+        "tools/EntityFramework6.psm1",
+        "tools/about_EntityFramework6.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/net40/any/ef6.exe",
+        "tools/net40/any/ef6.pdb",
+        "tools/net40/win-x86/ef6.exe",
+        "tools/net40/win-x86/ef6.pdb",
+        "tools/net45/any/ef6.exe",
+        "tools/net45/any/ef6.pdb",
+        "tools/net45/win-x86/ef6.exe",
+        "tools/net45/win-x86/ef6.pdb",
+        "tools/netcoreapp3.0/any/ef6.dll",
+        "tools/netcoreapp3.0/any/ef6.pdb",
+        "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "System.Data.SQLite/1.0.112.2": {
+      "sha512": "mCeo1xj2wFCB6LXGP9R0DhD13bK+Rgoq77vQw1DQhr2tFjCOCtCp/1+ZG/GNI7UWAdau98l90iQMJrE91XMg5Q==",
+      "type": "package",
+      "path": "system.data.sqlite/1.0.112.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "system.data.sqlite.1.0.112.2.nupkg.sha512",
+        "system.data.sqlite.nuspec"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.112.2": {
+      "sha512": "iYj32NThg9oSr/0IvG0HEIVi5/x5qqdqAU4wu8sSYe94e8F+QbrXmsrP/tvWTre4ugkgTgdmPsJdtxDP4TIsEg==",
+      "type": "package",
+      "path": "system.data.sqlite.core/1.0.112.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/x64/SQLite.Interop.dll",
+        "build/net20/x86/SQLite.Interop.dll",
+        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/x64/SQLite.Interop.dll",
+        "build/net40/x86/SQLite.Interop.dll",
+        "lib/net20/System.Data.SQLite.dll",
+        "lib/net20/System.Data.SQLite.dll.config",
+        "lib/net20/System.Data.SQLite.xml",
+        "lib/net40/System.Data.SQLite.dll",
+        "lib/net40/System.Data.SQLite.dll.config",
+        "lib/net40/System.Data.SQLite.xml",
+        "lib/netstandard2.0/System.Data.SQLite.dll",
+        "lib/netstandard2.0/System.Data.SQLite.dll.config",
+        "lib/netstandard2.0/System.Data.SQLite.xml",
+        "lib/netstandard2.1/System.Data.SQLite.dll",
+        "lib/netstandard2.1/System.Data.SQLite.dll.config",
+        "lib/netstandard2.1/System.Data.SQLite.xml",
+        "runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/linux-x64/native/netstandard2.1/SQLite.Interop.dll",
+        "runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/osx-x64/native/netstandard2.1/SQLite.Interop.dll",
+        "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/win-x64/native/netstandard2.1/SQLite.Interop.dll",
+        "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/win-x86/native/netstandard2.1/SQLite.Interop.dll",
+        "system.data.sqlite.core.1.0.112.2.nupkg.sha512",
+        "system.data.sqlite.core.nuspec"
+      ]
+    },
+    "System.Data.SQLite.EF6/1.0.112.2": {
+      "sha512": "5oRfN4s3PKiGf2UgmVyVyS878QWoZ+wfPOUwbBKg8TL37zNVe+3OIv42HSOCE+/TcGpYt6tbxo2oHIvxb14bQQ==",
+      "type": "package",
+      "path": "system.data.sqlite.ef6/1.0.112.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net40/app.config.install.xdt",
+        "content/net40/app.config.transform",
+        "content/net40/web.config.install.xdt",
+        "content/net40/web.config.transform",
+        "lib/net40/System.Data.SQLite.EF6.dll",
+        "lib/netstandard2.1/System.Data.SQLite.EF6.dll",
+        "system.data.sqlite.ef6.1.0.112.2.nupkg.sha512",
+        "system.data.sqlite.ef6.nuspec",
+        "tools/net40/install.ps1"
+      ]
+    },
+    "System.Data.SQLite.Linq/1.0.112.2": {
+      "sha512": "h2ERsMN06FVjqfNd+afOSPjhr9qVzGGAmnw/PvD8OZY+iBosG5v/uYTRrdlnCptUx9AVlD9O3Ibzwt5YOZoEcg==",
+      "type": "package",
+      "path": "system.data.sqlite.linq/1.0.112.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net20/app.config.transform",
+        "content/net20/web.config.transform",
+        "content/net40/app.config.transform",
+        "content/net40/web.config.transform",
+        "lib/net20/System.Data.SQLite.Linq.dll",
+        "lib/net40/System.Data.SQLite.Linq.dll",
+        "system.data.sqlite.linq.1.0.112.2.nupkg.sha512",
+        "system.data.sqlite.linq.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "System.Data.SQLite >= 1.0.112.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\engin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj",
+      "projectName": "NETFLIX",
+      "projectPath": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\NETFLIX.csproj",
+      "packagesPath": "C:\\Users\\engin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\engin\\Desktop\\Teslim\\TamProgram\\NETFLIX\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\engin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "System.Data.SQLite": {
+            "target": "Package",
+            "version": "[1.0.112.2, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
