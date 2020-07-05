@@ -20,7 +20,7 @@ Resimler Linki: [Proje Resimleri](https://github.com/nginY26/NETFLIX/tree/master
 ------------
 
 
-Database: [MS Access Database ](https://github.com/nginY26/NETFLIX/blob/master/NETFLIX/bin/Debug/Assets/netflix.db "MS Access Database ")
+Database: [SQLite Database ](https://github.com/nginY26/NETFLIX/blob/master/NETFLIX/bin/Debug/Assets/netflix.db "SQLite Database ")
 
 ----------------------------------------------
 
@@ -38,15 +38,16 @@ Database: [MS Access Database ](https://github.com/nginY26/NETFLIX/blob/master/N
 
 **!!! Programları (Film veya dizi) açmak için üzerine gelip 2 kere (çift) tıklama yaparak açabilirsiniz. !!!**
 **Nasıl Kullanılır?**
-1-)  Program 2 Farklı Şekilde Çalıştırılabilir:
+
+1. Program 2 Farklı Şekilde Çalıştırılabilir:
 - 	 NETFLIX/bin/Debug klasör yolu takip edilir ve NETFLIX.exe dosyası açılır.
 - 	 NETFLIX/NETFLIX.sln proje dosyası bir ide ile açılır ve proje derlenerek açıştırılır.
 
-2-) Giriş Yap veya Kayıt Ol
+2. Giriş Yap veya Kayıt Ol
 - Giriş Yap -) Giriş yapmak için kayıt olduğunuz eposta ve şifre ile ilk açılan ekrandan giriş yapabilirsiniz. Eğer isterseniz yukarıda belirtilen hesap ile de giriş yapabilirsiniz.
 - Kayıt Ol -) Giriş ekranında hesap oluştur butonuna tıklayarak hesap oluşturabilirsiniz.
 
-3-) Film veya dizi nasıl izlenir ?
+3. Film veya dizi nasıl izlenir ?
 - Film veya dizi izlemek için seçtiğiniz filmin / dizinin üzerine 2 kere(çift) tıklayarak programı açabilirsiniz.
 
 
